@@ -273,6 +273,25 @@ function sectionLabel(text) {
   return h;
 }
 
+function renderCompactMemberList(members) {
+  const list = document.createElement('ul');
+  list.className = 'alumni-list';
+  members.forEach(m => {
+    const li = document.createElement('li');
+    const links = makeMemberLinks(m);
+    const years = m.years || (m.start_year ? `${m.start_year}–` : '');
+    li.innerHTML = `
+      <span class="alumni-name">${m.name}</span>
+      <span class="alumni-role">${m.role}${m.flag ? ' ' + m.flag : ''}</span>
+      ${m.supervisor ? `<span class="alumni-role">Supervisor: ${m.supervisor}</span>` : ''}
+      ${years ? `<span class="alumni-years">${years}</span>` : ''}
+      ${m.next ? `<span class="alumni-next">Next stop: ${m.next}</span>` : ''}
+      ${links ? `<span class="alumni-links">${links}</span>` : ''}`;
+    list.appendChild(li);
+  });
+  return list;
+}
+
 async function renderTeam() {
   const container = document.getElementById('team-container');
   let data;
@@ -319,19 +338,13 @@ async function renderTeam() {
   // Undergrad
   if (data.undergrad_researchers && data.undergrad_researchers.length) {
     container.appendChild(sectionLabel('Undergraduate Researchers'));
-    const grid = document.createElement('div');
-    grid.className = 'members-grid';
-    data.undergrad_researchers.forEach(m => grid.appendChild(renderMemberCard(m)));
-    container.appendChild(grid);
+    container.appendChild(renderCompactMemberList(data.undergrad_researchers));
   }
 
-  // Visiting
+  // Collaborators — compact list matching former students
   if (data.collaborators && data.collaborators.length) {
     container.appendChild(sectionLabel('Collaborative PhD Students and Researchers'));
-    const grid = document.createElement('div');
-    grid.className = 'members-grid';
-    data.collaborators.forEach(m => grid.appendChild(renderMemberCard(m)));
-    container.appendChild(grid);
+    container.appendChild(renderCompactMemberList(data.collaborators));
   }
 
   // Visiting
