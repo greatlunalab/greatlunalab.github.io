@@ -212,6 +212,7 @@ function renderPICard(pi) {
 function renderMemberCard(member) {
   const card = document.createElement('article');
   card.className = 'member-card';
+  const years = member.years || (member.start_year ? `${member.start_year}–` : '');
 
 
   // Photo — wrapped in link if homepage exists
@@ -252,7 +253,7 @@ function renderMemberCard(member) {
   info.className = 'member-info';
   info.innerHTML = `
     <h3>${nameHtml}</h3>
-    <div class="member-role">${member.role}${member.flag ? ' ' + member.flag : ''}${member.start_year ? ' · ' + member.start_year + '–' : ''}</div>
+    <div class="member-role">${member.role}${member.flag ? ' ' + member.flag : ''}${years ? ' · ' + years : ''}</div>
     <ul class="interest-tags" aria-label="Research interests">
       ${(member.interests || []).map(t => `<li class="interest-tag">${t}</li>`).join('')}
     </ul>

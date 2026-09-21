@@ -120,9 +120,12 @@ Current member:
   "email": "", "homepage": "https://…", "scholar": "https://…",
   "linkedin": "", "cv": "",                    // empty fields are hidden
   "interests": ["Eye Tracking", "UI Agents"],  // shown as tags
-  "start_year": 2026                           // optional
+  "years": "2026–"                              // optional; a year or range
 }
 ```
+
+For an ongoing appointment, `"start_year": 2026` is also supported and is
+displayed as `2026–`. Use `years` when you want exact text such as `2024–2026`.
 
 Former student (compact list):
 
