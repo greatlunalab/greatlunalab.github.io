@@ -318,7 +318,7 @@ async function renderTeam() {
 
   // Visiting
   if (data.visiting_researchers && data.visiting_researchers.length) {
-    container.appendChild(sectionLabel('Visiting Researchers'));
+    container.appendChild(sectionLabel('Visiting Students and Collaborators'));
     const grid = document.createElement('div');
     grid.className = 'members-grid';
     data.visiting_researchers.forEach(m => grid.appendChild(renderMemberCard(m)));

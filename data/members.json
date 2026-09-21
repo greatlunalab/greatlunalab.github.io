@@ -29,6 +29,7 @@
       "scholar": "https://scholar.google.com/citations?user=YOUR-ID",
       "linkedin": "",
       "interests": [
+        "Digital Accessibility",
         "Multimodal Interaction",
         "XR / Extended Reality",
         "Privacy"
@@ -44,25 +45,31 @@
       "homepage": "https://bcc2023.github.io/",
       "scholar": "https://scholar.google.com/citations?user=IxY2kssAAAAJ&hl=en",
       "interests": [
-        "Human-AI Alignment",
-        "Interactive AI Systems"
+        "Attention Prediction",
+        "Visualization Optimization"
       ],
       "flag": "🇸🇬"
     }
   ],
-  "masters_students": [],
-  "undergrad_researchers": [],
-  "visiting_researchers": [],
-  "alumni": [
-    {
+  "masters_students": [
+         {
       "name": "Eunhye (Grace) Kim",
       "role": "Research Assistant",
       "flag": "🇰🇷",
-      "years": "2025",
+      "years": "2025 - ",
       "next": "",
       "homepage": "https://gracekim.me/",
       "scholar": "https://scholar.google.com/citations?user=-uGAkXoAAAAJ&hl=en"
     },
+  ],
+  "undergrad_researchers": [
+
+  ],
+  "visiting_researchers": [
+
+  ],
+  "alumni": [
+  
     {
       "name": "Kaden Salem",
       "role": "Research Assistant",
