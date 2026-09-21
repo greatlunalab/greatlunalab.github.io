@@ -278,9 +278,17 @@ async function renderTeam() {
   let data;
   try {
     const res = await fetch('data/members.json', { cache: 'no-cache' });   // always pick up edits
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data = await res.json();
   } catch (e) {
-    container.innerHTML = '<p style="color:var(--luna-text-light)">Could not load team data.</p>';
+    console.error('Could not load team data:', e);
+    container.innerHTML = location.protocol === 'file:'
+      ? `<p style="color:var(--luna-text-light)">
+          Team data cannot be loaded from a file opened directly in the browser.
+          In this project folder, run <code>python3 -m http.server 8000</code>,
+          then open <a href="http://localhost:8000/team.html">localhost:8000/team.html</a>.
+        </p>`
+      : '<p style="color:var(--luna-text-light)">Could not load team data. Please try refreshing the page.</p>';
     return;
   }
 
