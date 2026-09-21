@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LUNA — Lab for UI and Attention at the University of Utah, directed by Prof. Yue Jiang. We develop human-centered technologies that adapt to users and their contexts." />
+  <title>LUNA Lab | University of Utah</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- ══════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════ -->
+<nav class="luna-nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/brand/luna-logo-transparent.png" alt="LUNA Lab — Home" />
+  </a>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">About</a></li>
+    <li><a href="publications.html">Research</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="join.html">Work with us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+
+<!-- ══════════════════════════════════════
+     HERO — Computational Grid Animation
+══════════════════════════════════════ -->
+<section class="luna-hero" aria-labelledby="hero-title">
+  <canvas id="luna-grid-canvas" aria-hidden="true"></canvas>
+  <canvas id="luna-edge-canvas" aria-hidden="true"></canvas>
+  <div class="luna-hero-content">
+    <p class="hero-tagline"><span aria-hidden="true">// </span>Lab for UI and Attention</p>
+    <h1 id="hero-title">
+      <span class="highlight">LUNA</span> Lab
+    </h1>
+    <p class="hero-sub">
+      Building AI-Powered Interfaces That Truly Understand Users.
+    </p>
+  </div>
+  <a class="hero-scroll-cue" href="#about" aria-label="Scroll down to About LUNA">
+    <svg viewBox="0 0 24 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <path class="cue-1" d="M5 6l7 7 7-7"/>
+      <path class="cue-2" d="M5 16l7 7 7-7"/>
+      <path class="cue-3" d="M5 26l7 7 7-7"/>
+    </svg>
+  </a>
+</section>
+
+<!-- ══════════════════════════════════════
+     ABOUT
+══════════════════════════════════════ -->
+<section class="luna-section" id="about" aria-labelledby="about-title">
+  <div class="luna-container">
+    <div class="luna-section-accent" aria-hidden="true">
+      <div class="sq sq-1"></div>
+      <div class="sq sq-2"></div>
+      <div class="sq sq-3"></div>
+    </div>
+    <h2 class="section-title" id="about-title">About <span class="accent">LUNA</span></h2>
+
+    <div class="about-grid">
+      <div>
+        <p>
+          The <strong>Lab for UI and Attention (LUNA)</strong> is a research laboratory at the
+          <a data-link="schoolOfComputing" href="https://www.cs.utah.edu/" target="_blank" rel="noopener">School of Computing</a>,
+          University of Utah, directed by
+          <a data-link="piHomepage" href="https://yuejiang-nj.github.io/" target="_blank" rel="noopener">Prof. Yue Jiang</a>.
+          We develop human-centered technologies that <strong>enhance human capabilities
+          by adapting to users and their contexts</strong>.
+        </p>
+        <p>
+          Our work sits at the intersection of <strong>Human-Computer Interaction,
+          Computational UI, Eye Tracking, and Multimodal AI</strong>. We build systems
+          that understand how people see, think, and interact — and use that understanding
+          to make interfaces smarter, more accessible, and more expressive.
+        </p>
+        <p>
+          We contribute new algorithms, models, datasets, and interactive systems
+          that advance research and practice across <em>graphical user interfaces,
+          extended reality, and multimodal interaction</em>. Our work spans from
+          computational representations of UIs, to predicting where users look,
+          to designing interfaces that adapt and respond intelligently.
+        </p>
+        <p>
+          <strong>We are actively looking for new students, including PhD students for Fall 2027,</strong>
+          especially those interested in generative UI, UI agents, eye tracking,
+          digital accessibility, and AR/VR.
+          <a href="join.html">Learn how to get involved <span aria-hidden="true">→</span></a>
+        </p>
+      </div>
+
+      <div>
+        <h3 style="font-weight:600; font-size:0.97rem; font-family:var(--font-sans); letter-spacing:normal; color: var(--luna-primary); margin-bottom:0.8rem;">
+          Research Themes
+        </h3>
+        <div class="research-themes">
+          <div class="theme-card">
+            <h4>Computational UI</h4>
+            <p>Graph- and constraint-based representations of graphical interfaces for learning, optimization, and adaptation.</p>
+          </div>
+          <div class="theme-card">
+            <h4>Eye Tracking & Attention</h4>
+            <p>Understanding and predicting where users look across UI types — from desktop GUIs to data visualizations.</p>
+          </div>
+          <div class="theme-card">
+            <h4>UI Agents & Automation</h4>
+            <p>Vision-language models for UI understanding, accessibility testing, and intelligent UI automation.</p>
+          </div>
+          <div class="theme-card">
+            <h4>Multimodal Interaction</h4>
+            <p>Designing expressive XR and multimodal interfaces that adapt to human context and sensory channels.</p>
+          </div>
+        </div>
+
+        <p style="margin-top: 1.5rem;">
+          LUNA is part of the
+          <a data-link="hccGroup" href="https://hci.utah.edu/" target="_blank" rel="noopener">Human-Centered Computing (HCC) group</a>
+          at the University of Utah School of Computing.
+          <br><br>
+          <a data-link="labGithub" href="https://github.com/YueJiang-nj" target="_blank" rel="noopener">View our research code on GitHub <span aria-hidden="true">→</span></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FUNDED BY — scrolling logos
+══════════════════════════════════════ -->
+<section class="sponsors-section" aria-labelledby="sponsors-label">
+  <div class="sponsors-label" id="sponsors-label">Our research is generously supported by</div>
+  <div class="sponsors-track-wrapper">
+    <!-- Duplicate the set for seamless loop -->
+    <div class="sponsors-track" id="sponsors-track">
+
+      <!-- Set 1 -->
+      <div class="sponsor-logo">
+        <img src="assets/sponsors/nvidia.png" alt="NVIDIA"
+             onerror="this.parentElement.innerHTML='<span class=\'sponsor-text\'>NVIDIA</span>'" />
+      </div>
+      <div class="sponsor-logo">
+        <img src="assets/sponsors/one-u-rai.png" alt="One-U Responsible AI Initiative"
+             onerror="this.parentElement.innerHTML='<span class=\'sponsor-text\'>One-U RAI</span>'" />
+      </div>
+
+      <!-- Spacer / future sponsors go here — duplicate below too -->
+
+      <!-- Set 2 (duplicate for infinite scroll; hidden from assistive tech) -->
+      <div class="sponsor-logo" aria-hidden="true">
+        <img src="assets/sponsors/nvidia.png" alt="NVIDIA"
+             onerror="this.parentElement.innerHTML='<span class=\'sponsor-text\'>NVIDIA</span>'" />
+      </div>
+      <div class="sponsor-logo" aria-hidden="true">
+        <img src="assets/sponsors/one-u-rai.png" alt="One-U Responsible AI Initiative"
+             onerror="this.parentElement.innerHTML='<span class=\'sponsor-text\'>One-U RAI</span>'" />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer class="luna-footer">
+  <div class="luna-container">
+    <div class="footer-squares" aria-hidden="true">
+      <span style="background:#940000;"></span>
+      <span style="background:#ff5858;"></span>
+      <span style="background:#6b0000;"></span>
+      <span style="background:#ff5858;"></span>
+      <span style="background:#940000;"></span>
+      <span style="background:rgba(255,255,255,0.15);"></span>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/brand/luna-logo.png" alt="" />
+        </div>
+        <p>LUNA, Lab for UI and Attention<br>School of Computing, University of Utah<br>Salt Lake City, UT</p>
+      </div>
+      <div class="footer-links">
+        <h4 id="footer-quick-links">Quick Links</h4>
+        <ul aria-labelledby="footer-quick-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="publications.html">Research</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="join.html">Work with Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4 id="footer-ext-links">Links</h4>
+        <ul aria-labelledby="footer-ext-links">
+          <li><a data-link="piHomepage" href="https://yuejiang-nj.github.io/" target="_blank" rel="noopener">PI Homepage</a></li>
+          <li><a data-link="schoolOfComputing" href="https://www.cs.utah.edu/" target="_blank" rel="noopener">School of Computing</a></li>
+          <li><a data-link="universityOfUtah" href="https://www.utah.edu/" target="_blank" rel="noopener">University of Utah</a></li>
+          <li><a data-link="labGithub" href="https://github.com/YueJiang-nj" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 LUNA Lab &nbsp;·&nbsp; University of Utah
+    </div>
+  </div>
+</footer>
+
+<script src="js/site-config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/animation.js"></script>
+</body>
+</html>

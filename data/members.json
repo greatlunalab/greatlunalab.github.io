@@ -1,0 +1,76 @@
+{
+  "pi": [
+    {
+      "name": "Yue Jiang",
+      "role": "Principal Investigator / Assistant Professor",
+      "photo": "assets/team/photos/yue-jiang.jpg",
+      "bio": "Yue Jiang is an Assistant Professor at the University of Utah leading the Lab for UI and Attention (LUNA). She received the Aalto Best PhD Dissertation Award, Meta PhD Fellowship, Google Europe Students Scholarship, and Nokia Scholarship. She was selected as a Heidelberg Laureate Forum Young Researcher and UCSD Data Science Rising Star. She served as Accessibility Chair for CHI2023 and CHI2024, is currently Workshop Chair for IUI2027 and Publicity Chair for VL/HCC2026, and initiated the Computational User Interface Workshop series at CHI.",
+      "email": "yue.jiang@utah.edu",
+      "homepage": "https://yuejiang-nj.github.io/",
+      "scholar": "https://scholar.google.com/citations?user=KkdOIRoAAAAJ&hl=en",
+      "cv": "https://yuejiang-nj.github.io/CV_YueJiang.pdf",
+      "interests": [
+        "Computational UI",
+        "Eye Tracking",
+        "UI Agents",
+        "Human-AI Interaction",
+        "Multimodal AI"
+      ]
+    }
+  ],
+  "phd_students": [
+    {
+      "name": "Kewen (Astrid) Peng",
+      "role": "PhD Student",
+      "photo": "assets/team/photos/kewen-peng.jpg",
+      "bio": "",
+      "email": "",
+      "homepage": "https://astridreadygo.github.io/",
+      "scholar": "https://scholar.google.com/citations?user=YOUR-ID",
+      "linkedin": "",
+      "interests": [
+        "Multimodal Interaction",
+        "XR / Extended Reality",
+        "Privacy"
+      ],
+      "flag": "🇨🇳"
+    },
+    {
+      "name": "Beichen Xue",
+      "role": "Research Assistant",
+      "photo": "assets/team/photos/beichen-xue.jpg",
+      "bio": "",
+      "email": "",
+      "homepage": "https://bcc2023.github.io/",
+      "scholar": "https://scholar.google.com/citations?user=IxY2kssAAAAJ&hl=en",
+      "interests": [
+        "Human-AI Alignment",
+        "Interactive AI Systems"
+      ],
+      "flag": "🇸🇬"
+    }
+  ],
+  "masters_students": [],
+  "undergrad_researchers": [],
+  "visiting_researchers": [],
+  "alumni": [
+    {
+      "name": "Eunhye (Grace) Kim",
+      "role": "Research Assistant",
+      "flag": "🇰🇷",
+      "years": "2025",
+      "next": "",
+      "homepage": "https://gracekim.me/",
+      "scholar": "https://scholar.google.com/citations?user=-uGAkXoAAAAJ&hl=en"
+    },
+    {
+      "name": "Kaden Salem",
+      "role": "Research Assistant",
+      "flag": "🇺🇸",
+      "years": "2025",
+      "next": "Software Engineer @ Goldman Sachs",
+      "homepage": "",
+      "linkedin": "https://www.linkedin.com/in/kadensalem/"
+    }
+  ]
+}

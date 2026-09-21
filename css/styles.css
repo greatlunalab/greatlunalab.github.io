@@ -1,0 +1,1125 @@
+/* ============================================================
+   LUNA Lab — Shared Stylesheet
+   Colors: #940000 (primary), #ff5858 (accent), #ffffff (white)
+   ============================================================ */
+
+/* ── Factoria (custom font — place files in /fonts/) ── */
+@font-face {
+  font-family: 'Factoria';
+  src: url('../fonts/Factoria-Medium.woff2') format('woff2'),
+       url('../fonts/Factoria-Medium.woff')  format('woff'),
+       url('../fonts/Factoria-Medium.otf')   format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Factoria';
+  src: url('../fonts/Factoria-SemiBold.woff2') format('woff2'),
+       url('../fonts/Factoria-SemiBold.woff')  format('woff'),
+       url('../fonts/Factoria-SemiBold.otf')   format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Factoria';
+  src: url('../fonts/Factoria-Bold.woff2') format('woff2'),
+       url('../fonts/Factoria-Bold.woff')  format('woff'),
+       url('../fonts/Factoria-Bold.otf')   format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --luna-primary:    #940000;
+  --luna-primary-dk: #6b0000;
+  --luna-accent:     #ff5858;
+  --luna-white:      #ffffff;
+  --luna-dark:       #1a0000;
+  --luna-gray:       #f5f5f5;
+  --luna-gray-mid:   #d0d0d0;
+  --luna-text:       #1c1c1c;
+  --luna-text-light: #555555;
+  --nav-height:      70px;
+  --font-display: 'Factoria', 'Georgia', serif;   /* headings & titles */
+  --font-sans: 'Inter', 'Segoe UI', Arial, sans-serif;  /* body */
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  color: var(--luna-text);
+  background: var(--luna-white);
+  line-height: 1.65;
+}
+a { color: var(--luna-primary); text-decoration: none; }
+a:hover { color: var(--luna-accent); text-decoration: underline; }
+img { max-width: 100%; display: block; }
+
+/* ── Google Fonts (body + mono) ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Factoria applied to all display headings ── */
+h1, h2, h3,
+.section-title,
+.luna-hero-content h1,
+.page-header h1,
+.pub-year-label,
+.pi-card h3,
+.join-card h3,
+.contact-block h2,
+.contact-block h3,
+.footer-links h4,
+nav.luna-nav .nav-logo span {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+nav.luna-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--luna-primary);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+}
+
+nav.luna-nav .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+}
+nav.luna-nav .nav-logo img {
+  height: 44px;
+  width: auto;
+}
+nav.luna-nav .nav-logo span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--luna-primary);
+  letter-spacing: 0.03em;
+}
+
+nav.luna-nav .nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+nav.luna-nav .nav-links a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--luna-text);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+nav.luna-nav .nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0; right: 0;
+  height: 2px;
+  background: var(--luna-accent);
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+nav.luna-nav .nav-links a:hover,
+nav.luna-nav .nav-links a.active {
+  color: var(--luna-primary);
+  text-decoration: none;
+}
+nav.luna-nav .nav-links a:hover::after,
+nav.luna-nav .nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+/* Hamburger (mobile) */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 14px 10px;      /* 44x44 touch target (WCAG 2.5.5) */
+  margin: -10px -6px;      /* …without moving the bars visually */
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--luna-primary);
+  transition: all 0.2s;
+}
+
+@media (max-width: 768px) {
+  .nav-hamburger { display: flex; }
+  nav.luna-nav .nav-links {
+    position: fixed;
+    top: var(--nav-height); left: 0; right: 0;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 2rem;
+    gap: 1rem;
+    border-bottom: 2px solid var(--luna-primary);
+    display: none;
+  }
+  nav.luna-nav .nav-links.open { display: flex; }
+}
+
+/* ============================================================
+   PAGE WRAPPER
+   ============================================================ */
+main { padding-top: var(--nav-height); }
+
+/* ============================================================
+   HERO (index.html)
+   ============================================================ */
+.luna-hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - var(--nav-height));
+  min-height: 520px;
+  background: var(--luna-dark);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* The hero pulls the next section up over its white bottom band (JS sets a negative
+   margin); keep that section's content above the hero. */
+.luna-hero { z-index: 0; }
+.luna-hero + * { position: relative; z-index: 1; }
+/* Bottom edge cut by LUNA logo blocks (drawn by js/animation.js) */
+#luna-edge-canvas {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  width: 100%; height: 330px;   /* set by animation.js to one mark tall */
+  z-index: 7;                   /* above canvas, vignette and glow; below the title & scroll cue */
+  pointer-events: none;
+}
+
+#luna-grid-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  opacity: 0.80; /* letter monogram — vignette handles centre legibility */
+  /* soft hand-off: letters dissolve toward the bottom edge */
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 58%, rgba(0,0,0,0.55) 80%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 0%, #000 58%, rgba(0,0,0,0.55) 80%, transparent 100%);
+}
+/* soft hand-off into the About section: a warm glow rising from the bottom edge */
+.luna-hero::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 34%;
+  z-index: 6;               /* above canvas + vignette, below content */
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(148,0,0,0) 0%, rgba(148,0,0,0.12) 45%, rgba(148,0,0,0.30) 100%);
+}
+/* faint scroll cue at the bottom of the hero: three rounded chevrons that ripple downward */
+.hero-scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: var(--hero-cue, 1.2rem);   /* set by animation.js: inside the upper half of the bottom fade */
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 44px; height: 56px;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: color 0.2s;
+}
+.hero-scroll-cue:hover { color: rgba(255,255,255,0.9); text-decoration: none; }
+.hero-scroll-cue svg { width: 26px; height: 44px; display: block; overflow: visible; }
+.hero-scroll-cue path { animation: hero-cue-ripple 2.1s ease-in-out infinite; opacity: 0.25; }
+.hero-scroll-cue .cue-2 { animation-delay: 0.22s; }
+.hero-scroll-cue .cue-3 { animation-delay: 0.44s; }
+@keyframes hero-cue-ripple {
+  0%, 60%, 100% { opacity: 0.22; transform: translateY(0); }
+  30%           { opacity: 0.95; transform: translateY(2px); }
+}
+
+.luna-hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  max-width: 800px;
+}
+.luna-hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+.luna-hero-content h1 .highlight {
+  color: var(--luna-accent);
+}
+.luna-hero-content .hero-sub {
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  color: rgba(255,255,255,0.8);
+  margin-top: 0.8rem;
+  font-weight: 400;
+}
+.luna-hero-content .hero-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--luna-accent);
+  margin-top: 1.2rem;
+  opacity: 0.9;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   SQUARE MOTIF (decorative, from LUNA logo aesthetic)
+   ============================================================ */
+.luna-square-motif {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 8px);
+  gap: 2px;
+  vertical-align: middle;
+  margin: 0 6px;
+}
+.luna-square-motif span {
+  width: 8px; height: 8px;
+  border-radius: 1px;
+}
+.luna-square-motif span.s-red  { background: var(--luna-accent); }
+.luna-square-motif span.s-dark { background: var(--luna-primary); }
+.luna-square-motif span.s-white { background: white; border: 1px solid var(--luna-gray-mid); }
+
+/* Larger square accent bar */
+.luna-section-accent {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 1.2rem;
+  align-items: center;
+}
+.luna-section-accent .sq {
+  width: 12px; height: 12px;
+  border-radius: 2px;
+}
+.luna-section-accent .sq-1 { background: var(--luna-primary); }
+.luna-section-accent .sq-2 { background: var(--luna-accent); }
+.luna-section-accent .sq-3 { background: var(--luna-gray-mid); }
+
+/* ============================================================
+   SECTIONS — general
+   ============================================================ */
+.luna-section {
+  padding: 5rem 0;
+}
+.luna-section-alt {
+  background: var(--luna-gray);
+}
+.luna-container {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.section-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--luna-primary);
+  margin-bottom: 1.5rem;
+}
+.section-title .accent { color: var(--luna-accent); }
+
+/* ============================================================
+   ABOUT SECTION (index)
+   ============================================================ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.about-grid p {
+  margin-bottom: 1rem;
+  color: var(--luna-text-light);
+  font-size: 0.97rem;
+}
+.about-grid p strong { color: var(--luna-text); }
+
+.research-themes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.theme-card {
+  background: white;
+  border: 1.5px solid var(--luna-gray-mid);
+  border-left: 4px solid var(--luna-accent);
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.theme-card:hover {
+  border-color: var(--luna-primary);
+  box-shadow: 0 4px 16px rgba(148,0,0,0.08);
+}
+.theme-card h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--luna-primary);
+  margin-bottom: 0.3rem;
+}
+.theme-card p {
+  font-size: 0.82rem;
+  margin: 0;
+  color: var(--luna-text-light);
+}
+
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .research-themes { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   SPONSORS SCROLL
+   ============================================================ */
+.sponsors-section {
+  background: white;
+  padding: 2.5rem 0;
+  overflow: hidden;
+  border-bottom: 1px solid var(--luna-gray-mid);
+}
+.sponsors-label {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--luna-text-light);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.sponsors-track-wrapper {
+  overflow: hidden;
+  position: relative;
+  /* fade edges */
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+.sponsors-track {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  width: max-content;
+  animation: sponsors-scroll 18s linear infinite;
+}
+.sponsors-track:hover { animation-play-state: paused; }
+
+.sponsor-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  flex-shrink: 0;
+}
+.sponsor-logo img { height: 44px; width: auto; max-width: 220px; object-fit: contain; }
+/* very wide wordmark: a bit shorter so it sits in balance with NVIDIA */
+.sponsor-logo img[src*="one-u-rai"] { height: 34px; max-width: 420px; }
+.sponsor-logo .sponsor-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--luna-text);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Few sponsors → a calm, centred row. The duplicate set (only needed for the
+   infinite scroll) is hidden. To bring the scrolling marquee back once there are
+   many logos, add class="scrolling" to .sponsors-track in index.html. */
+.sponsors-track:not(.scrolling) {
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3.5rem;
+  animation: none;
+}
+.sponsors-track:not(.scrolling) .sponsor-logo[aria-hidden="true"] { display: none; }
+.sponsors-track-wrapper:has(.sponsors-track:not(.scrolling)) {
+  -webkit-mask-image: none; mask-image: none;
+}
+
+@keyframes sponsors-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   PUBLICATIONS PAGE
+   ============================================================ */
+.pub-year-group { margin-bottom: 3rem; }
+.pub-year-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--luna-primary);
+  border-bottom: 2px solid var(--luna-accent);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.pub-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--luna-gray-mid);
+  align-items: start;
+}
+.pub-card:last-child { border-bottom: none; }
+
+.pub-thumb {
+  width: 200px;
+  height: auto;
+  aspect-ratio: 16 / 9;     /* matches the 16:9 paper covers, so nothing gets cropped */
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--luna-gray);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--luna-gray-mid);
+  position: relative;
+}
+.pub-thumb img { width: 100%; height: 100%; object-fit: contain; background: #fff; }   /* show the whole figure */
+/* Thumbnail that plays the paper's video */
+a.pub-thumb.has-video { cursor: pointer; text-decoration: none; }
+a.pub-thumb.has-video img { transition: transform 0.35s ease, filter 0.35s ease; }
+a.pub-thumb.has-video:hover img,
+a.pub-thumb.has-video:focus-visible img { transform: scale(1.04); filter: brightness(0.82); }
+.play-badge {
+  position: absolute;
+  right: 8px; bottom: 8px;
+  width: 34px; height: 34px;
+  border-radius: 8px;                    /* rounded square — LUNA block */
+  background: rgba(148,0,0,0.92);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.play-badge svg { width: 18px; height: 18px; fill: #fff; margin-left: 2px; }
+a.pub-thumb.has-video:hover .play-badge,
+a.pub-thumb.has-video:focus-visible .play-badge { transform: scale(1.1); background: var(--luna-accent); }
+.pub-thumb .thumb-placeholder {
+  width: 100%; height: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 2px;
+  padding: 8px;
+  background: var(--luna-dark);
+}
+.pub-thumb .thumb-placeholder .sq {
+  border-radius: 1px;
+  opacity: 0.7;
+}
+
+.pub-info .pub-venue {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--luna-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
+.pub-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--luna-text);
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+.pub-info .pub-authors {
+  font-size: 0.85rem;
+  color: var(--luna-text-light);
+  margin-bottom: 0.6rem;
+}
+.pub-info .pub-authors strong { color: var(--luna-text); }
+.pub-info .pub-desc {
+  font-size: 0.84rem;
+  color: var(--luna-text-light);
+  line-height: 1.55;
+  margin-bottom: 0.7rem;
+}
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.pub-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  border: 1.5px solid var(--luna-primary);
+  color: var(--luna-primary);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.pub-link:hover {
+  background: var(--luna-primary);
+  color: white;
+  text-decoration: none;
+}
+.pub-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+.pub-tag {
+  font-size: 0.73rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: rgba(148,0,0,0.08);
+  color: var(--luna-primary);
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .pub-card { grid-template-columns: 1fr; }
+  .pub-thumb { width: 100%; height: auto; }
+}
+
+/* ============================================================
+   TEAM PAGE
+   ============================================================ */
+.team-section-label {
+  font-family: var(--font-sans);
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--luna-text-light);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.team-section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--luna-gray-mid);
+}
+
+/* PI card */
+.pi-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
+  align-items: start;
+  padding: 2rem;
+  background: white;
+  border: 1.5px solid var(--luna-gray-mid);   /* plain grey all round, like the member cards */
+  border-radius: 10px;
+  margin-bottom: 3rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.pi-card .pi-photo {
+  width: 180px; height: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--luna-gray);
+  border: 2px solid var(--luna-gray-mid);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.pi-card .pi-photo img { width: 100%; height: 100%; object-fit: cover; }
+.pi-card h3 { font-size: 1.4rem; font-weight: 700; color: var(--luna-text); }
+.pi-card .pi-title { font-size: 0.9rem; color: var(--luna-accent); font-weight: 600; margin: 0.2rem 0 0.8rem; }
+.pi-card .pi-bio { font-size: 0.88rem; color: var(--luna-text-light); line-height: 1.6; margin-bottom: 1rem; }
+.pi-card .pi-links { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.pi-card .pi-links a {
+  font-size: 0.8rem; font-weight: 500;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  border: 1.5px solid var(--luna-primary);
+  color: var(--luna-primary);
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.pi-card .pi-links a:hover { background: var(--luna-primary); color: white; }
+
+/* Member grid */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.member-card {
+  background: white;
+  border: 1.5px solid var(--luna-gray-mid);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+}
+.member-card:hover {
+  box-shadow: 0 8px 28px rgba(148,0,0,0.12);
+  transform: translateY(-3px);
+}
+/* (no longer used — cards now have a plain grey border) */
+.member-card-strip {
+  height: 8px;
+  display: flex;
+}
+.member-card-strip span {
+  flex: 1;
+}
+.member-card-strip .s1 { background: var(--luna-primary); }
+.member-card-strip .s2 { background: var(--luna-accent); }
+.member-card-strip .s3 { background: var(--luna-primary-dk); }
+
+.member-card .member-photo {
+  /* same size and frame as the PI photo */
+  width: 180px; height: 180px;
+  margin: 1.3rem 1.1rem 0;
+  border-radius: 8px;
+  border: 2px solid var(--luna-gray-mid);
+  background: var(--luna-gray);
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.member-card .member-photo img { width: 100%; height: 100%; object-fit: cover; }
+.member-card .member-photo .photo-placeholder {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 3px;
+  padding: 20px;
+  width: 100%; height: 100%;
+  background: var(--luna-dark);
+}
+.member-card .member-photo .photo-placeholder .sq {
+  border-radius: 2px;
+  opacity: 0.5;
+}
+.member-info {
+  padding: 1rem 1.1rem 1.2rem;
+}
+@media (max-width: 640px) {
+  .member-card .member-photo { width: 120px; height: 120px; }
+}
+.member-info h3,
+.member-info h4 { font-family: var(--font-sans); letter-spacing: normal; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.2rem; }
+.member-info .member-role { font-size: 0.78rem; color: var(--luna-accent); font-weight: 600; margin-bottom: 0.4rem; }
+.member-info .member-interests { font-size: 0.78rem; color: var(--luna-text-light); line-height: 1.5; margin-bottom: 0.7rem; }
+.member-info .member-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.member-info .member-links a {
+  font-size: 0.73rem; font-weight: 500;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  border: 1px solid var(--luna-primary);
+  color: var(--luna-primary);
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.member-info .member-links a:hover { background: var(--luna-primary); color: white; }
+
+/* Former students: compact list */
+.alumni-list { list-style: none; margin: 0 0 3rem; padding: 0; }
+.alumni-list li {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 0.35rem 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--luna-gray-mid);
+  text-align: left;
+}
+.alumni-name  { font-weight: 600; color: var(--luna-text); min-width: 12rem; }
+.alumni-name a { color: inherit; }
+.alumni-role  { font-size: 0.88rem; color: var(--luna-text-light); }
+.alumni-years { font-size: 0.85rem; color: var(--luna-text-light); }
+.alumni-next  { font-size: 0.85rem; color: var(--luna-primary); }
+.alumni-links { margin-left: auto; display: flex; gap: 0.4rem; }
+.alumni-links a {
+  font-size: 0.73rem; font-weight: 500;
+  padding: 0.15rem 0.6rem;
+  border-radius: 12px;
+  border: 1px solid var(--luna-primary);
+  color: var(--luna-primary);
+  text-decoration: none;
+}
+.alumni-links a:hover { background: var(--luna-primary); color: #fff; }
+
+@media (max-width: 640px) {
+  .alumni-links { margin-left: 0; flex-basis: 100%; }
+  .pi-card { grid-template-columns: 1fr; }
+  .pi-card .pi-photo { width: 120px; height: 120px; }
+}
+
+/* ============================================================
+   JOIN (Work with us) PAGE
+   ============================================================ */
+.join-intro {
+  font-size: 1.05rem;
+  color: var(--luna-text-light);
+  max-width: none;          /* same width as the cards and note below */
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+.join-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+@media (max-width: 768px) {
+  /* Swipeable card row on phones (desktop keeps the grid) */
+  .join-cards {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding: 0 1rem;
+    gap: 1rem;
+    margin: 0 -2rem 3rem;         /* bleed to the screen edge so the next card peeks in */
+    padding: 0.25rem 2rem 1rem;
+    scrollbar-width: thin;
+  }
+  .join-cards .join-card {
+    flex: 0 0 86%;
+    scroll-snap-align: center;
+  }
+}
+.join-card {
+  background: white;
+  border: 1.5px solid var(--luna-gray-mid);
+  border-radius: 10px;
+  padding: 1.8rem;
+  position: relative;
+  overflow: hidden;
+}
+.join-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--luna-primary), var(--luna-accent));
+}
+.join-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--luna-primary);
+  margin-bottom: 0.8rem;
+}
+.join-card p {
+  font-size: 0.88rem;
+  color: var(--luna-text-light);
+  line-height: 1.65;
+  margin-bottom: 0.6rem;
+}
+.join-card ul {
+  list-style: none;
+  margin: 0.6rem 0;
+}
+.join-card ul li {
+  font-size: 0.85rem;
+  color: var(--luna-text-light);
+  padding: 0.25rem 0 0.25rem 1.1rem;
+  position: relative;
+}
+.join-card ul li::before {
+  content: '▪';
+  color: var(--luna-accent);
+  position: absolute;
+  left: 0;
+}
+.join-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.55rem 1.2rem;
+  border-radius: 6px;
+  background: var(--luna-primary);
+  color: white;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.join-btn:hover { background: var(--luna-accent); color: white; text-decoration: none; }
+
+.research-areas-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+.research-area-tag {
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  background: rgba(148,0,0,0.08);
+  color: var(--luna-primary);
+  border: 1px solid rgba(148,0,0,0.2);
+}
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.contact-block h2,
+.contact-block h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--luna-primary);
+  margin-bottom: 0.8rem;
+}
+.contact-block p {
+  font-size: 0.92rem;
+  color: var(--luna-text-light);
+  line-height: 1.7;
+}
+.contact-block a { color: var(--luna-primary); }
+.contact-map {
+  width: 100%;
+  height: 320px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1.5px solid var(--luna-gray-mid);
+}
+.contact-map iframe { width: 100%; height: 100%; border: none; }
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer.luna-footer {
+  background: var(--luna-dark);
+  color: rgba(255,255,255,0.8);
+  padding: 3rem 0 2rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+.footer-brand .footer-logo img { height: 40px; margin-bottom: 0.8rem; border-radius: 4px; } /* luna-logo.png has a white background: show it as-is (no filter) */
+.footer-brand p { font-size: 0.84rem; color: rgba(255,255,255,0.5); line-height: 1.6; max-width: 280px; }
+.footer-links h4 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 0.8rem;
+}
+.footer-links ul { list-style: none; }
+.footer-links ul li { margin-bottom: 0.5rem; }
+.footer-links ul li a {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-links ul li a:hover { color: var(--luna-accent); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+}
+.footer-bottom .accent { color: var(--luna-accent); }
+/* Footer square motif row */
+.footer-squares {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 1.2rem;
+}
+.footer-squares span {
+  width: 10px; height: 10px;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .nav-hamburger { display: flex; }
+}
+
+/* ============================================================
+   UTILITY
+   ============================================================ */
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 2rem; }
+.text-accent { color: var(--luna-accent); }
+.text-primary { color: var(--luna-primary); }
+
+/* Page header (non-home pages) — same dark cover as the homepage, smaller:
+   logo-block tiles on the right and one mark carved into the bottom-right corner
+   (both drawn by js/animation.js) */
+.page-header {
+  background: #090000;       /* = homepage hero (#1a0000 under the 80% #050000 canvas) */
+  color: white;
+  padding: 4rem 0 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {       /* warm glow toward the bottom, like the hero */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(148,0,0,0) 30%, rgba(148,0,0,0.28) 100%);
+  pointer-events: none;
+}
+.page-header .luna-container { position: relative; z-index: 10; }
+.page-grid-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  opacity: 0.80;
+  pointer-events: none;
+  /* tiles only on the right, fading in from the middle */
+  -webkit-mask-image: linear-gradient(to right, transparent 35%, rgba(0,0,0,0.6) 60%, #000 85%);
+          mask-image: linear-gradient(to right, transparent 35%, rgba(0,0,0,0.6) 60%, #000 85%);
+}
+.page-edge-canvas {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  width: 100%; height: 0;   /* height set by animation.js */
+  z-index: 2;
+  pointer-events: none;
+}
+.page-header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  position: relative;
+}
+.page-header p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+
+/* ============================================================
+   JUSTIFIED BODY TEXT — paragraphs and list items in page content are justified
+   ============================================================ */
+main p,
+main li {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;            /* breaks long words so justified lines don't get big gaps */
+}
+/* keep centred / single-line text as it was */
+.luna-hero-content p,
+.page-header p,
+.research-area-tag,
+.interest-tag,
+.pub-tag {
+  text-align: inherit;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+/* ============================================================
+   ACCESSIBILITY (no visual change for mouse users)
+   ============================================================ */
+/* Screen-reader-only text */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* Skip link — hidden until it receives keyboard focus */
+.skip-link {
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 2000;
+  transform: translateY(-120%);
+  background: var(--luna-primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0 0 6px 0;
+  text-decoration: none;
+  transition: transform 0.15s;
+}
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 3px solid var(--luna-accent);
+  outline-offset: 2px;
+}
+/* Visible focus ring for keyboard users only (:focus-visible) */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible,
+iframe:focus-visible {
+  outline: 3px solid var(--luna-accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+.join-btn:focus-visible,
+.pub-link:focus-visible,
+.pi-card .pi-links a:focus-visible,
+.member-info .member-links a:focus-visible {
+  outline-color: var(--luna-primary);
+  outline-offset: 2px;
+}
+.luna-hero-content a:focus-visible,
+.hero-scroll-cue:focus-visible,
+footer.luna-footer a:focus-visible {
+  outline-color: #fff;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .sponsors-track { animation: none; }
+  .hero-scroll-cue path { animation: none; opacity: 0.7; }
+  .member-card:hover { transform: none; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

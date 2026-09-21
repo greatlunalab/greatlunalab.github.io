@@ -1,0 +1,274 @@
+{
+  "_readme": "Publications shown on publications.html (see README.md). Add a paper with `python3 scripts/add_paper.py --doi <DOI>` (or --arxiv <id>), or copy an existing entry. Names in settings.highlight_names are shown in bold. 'thumb': a web-sized image in assets/papers/ named after the paper id (keep full-size originals in _source/paper-originals/). 'video': a YouTube or .mp4 link; the thumbnail then becomes a play button.",
+  "settings": {
+    "highlight_names": [
+      "Yue Jiang",
+      "Kewen Peng"
+    ],
+    "earlier_work_before": 2025,
+    "earlier_work_label": "Selected Earlier Work"
+  },
+  "publications": [
+    {
+      "id": "seekui",
+      "title": "SeekUI: Predicting Visual Search Behavior on Graphical User Interfaces with a Reward-Augmented Vision Language Model",
+      "authors": [
+        "Zixin Guo*",
+        "Yue Jiang*",
+        "Luis A. Leiva",
+        "Antti Oulasvirta"
+      ],
+      "note": "*Equal Contribution",
+      "venue": "CHI 2026",
+      "venue_type": "ACM CHI",
+      "year": 2026,
+      "description": "A reward-augmented vision-language model that predicts visual search behavior on graphical user interfaces, bridging computational UI understanding with human attention modeling.",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2026CHI_SeekUI/paper.pdf"
+        },
+        {
+          "label": "Supplementary Material",
+          "url": "https://yuejiang-nj.github.io/Publications/2026CHI_SeekUI/supp.pdf"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/YueJiang-nj/SeekUI-CHI2026"
+        }
+      ],
+      "tags": [
+        "Eye Tracking",
+        "Vision Language Models",
+        "Graphical UI"
+      ],
+      "thumb": "assets/papers/seekui.jpg",
+      "video": "https://yuejiang-nj.github.io/Publications/2026CHI_SeekUI/video.mp4"
+    },
+    {
+      "id": "mindgap",
+      "title": "Mind the Gap: Mapping Wearer–Bystander Privacy Tensions and Context-Adaptive Pathways for Camera Glasses",
+      "authors": [
+        "Kewen Peng",
+        "[et al.]"
+      ],
+      "note": null,
+      "venue": "CHI 2026",
+      "venue_type": "ACM CHI",
+      "year": 2026,
+      "description": "A multi-stakeholder study on wearer–bystander privacy tensions in camera glasses, through surveys (N=525) and paired interviews (N=20). Contributes a diagnostic framework for context-adaptive pathways for privacy protection.",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://astridreadygo.github.io/pdf_smart_glasses_CHI26.pdf"
+        }
+      ],
+      "tags": [
+        "Wearables",
+        "Privacy",
+        "HCI"
+      ],
+      "thumb": "assets/papers/mindgap.jpg",
+      "video": "https://youtu.be/tUaWvoV93dk"
+    },
+    {
+      "id": "workshop26",
+      "title": "Human-AI-UI Interactions Across Modalities",
+      "authors": [
+        "Kewen Peng",
+        "Jeffrey Nichols",
+        "Christof Lutteroth",
+        "Tiffany Knearem",
+        "Felix Kretzer",
+        "Jeffrey Bigham",
+        "Alexander Maedche",
+        "Yue Jiang"
+      ],
+      "note": null,
+      "venue": "CHI 2026",
+      "venue_type": "Workshop",
+      "year": 2026,
+      "description": "A workshop exploring how AI and multimodal interfaces can reshape human-computer interaction across text, voice, gesture, and extended reality. This is the fifth CHI workshop we have organized on computational user interfaces.",
+      "links": [
+        {
+          "label": "Webpage",
+          "url": "https://sites.google.com/view/computational-uichi26"
+        },
+        {
+          "label": "Proposal",
+          "url": "https://yuejiang-nj.github.io/Publications/2026CHI_UserInterfaces/paper.pdf"
+        }
+      ],
+      "tags": [
+        "Workshop",
+        "Multimodal",
+        "UI Agents"
+      ],
+      "thumb": "assets/papers/workshop26.png"
+    },
+    {
+      "id": "vrwhisper",
+      "title": "VR Whispering: A Multisensory Approach for Private Conversations in Social Virtual Reality",
+      "authors": [
+        "Kewen Peng",
+        "[et al.]"
+      ],
+      "note": null,
+      "venue": "IEEE VR 2025",
+      "venue_type": "TVCG Paper",
+      "year": 2025,
+      "description": "Whisper — a multisensory approach combining visual, auditory, and tactile cues to recreate the feel of whispering in social VR. A comparative evaluation (N=24) shows Whisper significantly outperforms existing methods in privacy, intimacy, and social presence.",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://astridreadygo.github.io/pdf_vrwhispering.pdf"
+        }
+      ],
+      "tags": [
+        "VR",
+        "Multimodal",
+        "Social Computing",
+        "Privacy"
+      ],
+      "thumb": "assets/papers/vrwhisper.jpg",
+      "video": "https://youtu.be/fNkiosQOogs"
+    },
+    {
+      "id": "iluvui",
+      "title": "ILuvUI: Instruction-tuned LangUage-Vision Modeling of UIs from Machine Conversations",
+      "authors": [
+        "Yue Jiang",
+        "Eldon Schoop",
+        "Amanda Swearngin",
+        "Jeffrey Nichols"
+      ],
+      "note": null,
+      "venue": "IUI 2025",
+      "venue_type": "ACM IUI",
+      "year": 2025,
+      "description": "A vision-language model for UI understanding, instruction-tuned on machine-generated conversations about UI screenshots to support diverse downstream UI tasks.",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2310.04869"
+        }
+      ],
+      "tags": [
+        "UI Agents",
+        "Vision Language Models",
+        "LLM"
+      ],
+      "thumb": "assets/papers/iluvui.jpg"
+    },
+    {
+      "id": "eyeformer",
+      "title": "EyeFormer: Predicting Personalized Scanpaths with Transformer-Guided Reinforcement Learning",
+      "authors": [
+        "Yue Jiang*",
+        "Zixin Guo*",
+        "Hamed R. Tavakoli",
+        "Luis A. Leiva",
+        "Antti Oulasvirta"
+      ],
+      "note": null,
+      "venue": "UIST 2024",
+      "venue_type": "ACM UIST",
+      "year": 2024,
+      "description": "",
+      "links": [
+        {
+          "label": "Webpage",
+          "url": "https://yuejiang-nj.github.io/Publications/2024UIST_EyeFormer/project_page/main.html"
+        },
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2024UIST_EyeFormer/project_page/paper.pdf"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/YueJiang-nj/EyeFormer-UIST2024"
+        }
+      ],
+      "tags": [
+        "Eye Tracking",
+        "Transformers",
+        "Personalization"
+      ],
+      "thumb": "assets/papers/eyeformer.jpg",
+      "video": "https://yuejiang-nj.github.io/Publications/2024UIST_EyeFormer/project_page/video.mp4"
+    },
+    {
+      "id": "graph4gui",
+      "title": "Graph4GUI: Graph Neural Networks for Representing Graphical User Interfaces",
+      "authors": [
+        "Yue Jiang",
+        "Changkong Zhou",
+        "Vikas Garg*",
+        "Antti Oulasvirta*"
+      ],
+      "note": null,
+      "venue": "CHI 2024",
+      "venue_type": "ACM CHI",
+      "year": 2024,
+      "description": "",
+      "links": [
+        {
+          "label": "Webpage",
+          "url": "https://yuejiang-nj.github.io/Publications/2024CHI_Graph4GUI/project_page/main.html"
+        },
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2024CHI_Graph4GUI/project_page/paper.pdf"
+        }
+      ],
+      "tags": [
+        "Computational UI",
+        "GNN",
+        "GUI Representation"
+      ],
+      "thumb": "assets/papers/graph4gui.jpg"
+    },
+    {
+      "id": "ueyes",
+      "title": "UEyes: Understanding Visual Saliency across User Interface Types",
+      "authors": [
+        "Yue Jiang",
+        "Luis A. Leiva",
+        "Hamed R. Tavakoli",
+        "Paul R.B. Houssel",
+        "Julia Kylmala",
+        "Antti Oulasvirta"
+      ],
+      "note": null,
+      "venue": "CHI 2023",
+      "venue_type": "ACM CHI",
+      "year": 2023,
+      "description": "",
+      "links": [
+        {
+          "label": "Webpage",
+          "url": "https://yuejiang-nj.github.io/Publications/2023CHI_UEyes/project_page/main.html"
+        },
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2023CHI_UEyes/project_page/paper.pdf"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://zenodo.org/record/8010312"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/YueJiang-nj/UEyes-CHI2023"
+        }
+      ],
+      "tags": [
+        "Eye Tracking",
+        "Visual Saliency",
+        "Dataset"
+      ],
+      "thumb": "assets/papers/ueyes.jpg",
+      "video": "https://www.youtube.com/watch?v=hv5nIQdhMLI"
+    }
+  ]
+}

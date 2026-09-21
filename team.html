@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Meet the LUNA Lab team at the University of Utah." />
+  <title>Team | LUNA Lab</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Extra: square-pattern photo placeholder for team */
+    .photo-placeholder-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 3px;
+      padding: 16px;
+      width: 100%; height: 100%;
+      background: var(--luna-dark);
+    }
+    .photo-placeholder-grid .sq {
+      border-radius: 2px;
+    }
+    .pi-photo-placeholder {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 4px;
+      padding: 20px;
+      width: 100%; height: 100%;
+      background: var(--luna-dark);
+    }
+    .pi-photo-placeholder .sq { border-radius: 2px; }
+
+    /* Interests tag row */
+    .interest-tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0 0.8rem; }
+    .interest-tag {
+      font-size: 0.72rem; font-weight: 500;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      background: rgba(148,0,0,0.08);
+      color: var(--luna-primary);
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav class="luna-nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/brand/luna-logo-transparent.png" alt="LUNA Lab — Home" />
+  </a>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">About</a></li>
+    <li><a href="publications.html">Research</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="join.html">Work with us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+
+<div class="page-header">
+  <canvas class="page-grid-canvas" aria-hidden="true"></canvas>
+  <canvas class="page-edge-canvas" aria-hidden="true"></canvas>
+  <div class="luna-container">
+    <h1>Team</h1>
+    <p>Meet the people behind LUNA.</p>
+  </div>
+</div>
+
+<section class="luna-section" aria-label="Team members">
+  <div class="luna-container" id="team-container">
+    <!-- Rendered dynamically from members.json below -->
+    <noscript>
+      <p>Please enable JavaScript to view the team page, or see
+      <a href="data/members.json">members.json</a>.</p>
+    </noscript>
+  </div>
+</section>
+
+</main>
+
+<footer class="luna-footer">
+  <div class="luna-container">
+    <div class="footer-squares" aria-hidden="true">
+      <span style="background:#940000;"></span>
+      <span style="background:#ff5858;"></span>
+      <span style="background:#6b0000;"></span>
+      <span style="background:#ff5858;"></span>
+      <span style="background:#940000;"></span>
+      <span style="background:rgba(255,255,255,0.15);"></span>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/brand/luna-logo.png" alt="" />
+        </div>
+        <p>LUNA, Lab for UI and Attention<br>School of Computing, University of Utah<br>Salt Lake City, UT</p>
+      </div>
+      <div class="footer-links">
+        <h4 id="footer-quick-links">Quick Links</h4>
+        <ul aria-labelledby="footer-quick-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="publications.html">Research</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="join.html">Work with Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4 id="footer-ext-links">Links</h4>
+        <ul aria-labelledby="footer-ext-links">
+          <li><a data-link="piHomepage" href="https://yuejiang-nj.github.io/" target="_blank" rel="noopener">PI Homepage</a></li>
+          <li><a data-link="schoolOfComputing" href="https://www.cs.utah.edu/" target="_blank" rel="noopener">School of Computing</a></li>
+          <li><a data-link="universityOfUtah" href="https://www.utah.edu/" target="_blank" rel="noopener">University of Utah</a></li>
+          <li><a data-link="labGithub" href="https://github.com/YueJiang-nj" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 LUNA Lab &nbsp;·&nbsp; University of Utah
+    </div>
+  </div>
+</footer>
+
+<script src="js/site-config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/animation.js"></script>
+<script>
+/**
+ * Loads members.json and renders the team page.
+ * To add/edit members, update data/members.json — no HTML edits needed.
+ */
+
+const PLACEHOLDER_COLORS = ['#940000','#ff5858','#6b0000','#1a0000','#940000','#ff5858'];
+
+function squarePlaceholder(size = 36) {
+  const div = document.createElement('div');
+  div.className = size > 6 ? 'pi-photo-placeholder' : 'photo-placeholder-grid';
+  div.setAttribute('aria-hidden', 'true');   // decorative
+  div.style.cssText = `display:grid;grid-template-columns:repeat(6,1fr);gap:3px;padding:12px;width:100%;height:100%;background:#1a0000;box-sizing:border-box;`;
+  for (let i = 0; i < size; i++) {
+    const sq = document.createElement('div');
+    sq.style.cssText = `border-radius:2px;background:${PLACEHOLDER_COLORS[i % PLACEHOLDER_COLORS.length]};opacity:${(0.3+Math.random()*0.6).toFixed(2)};`;
+    div.appendChild(sq);
+  }
+  return div;
+}
+
+function makeMemberLinks(member) {
+  const links = [];
+  if (member.homepage) links.push(`<a href="${member.homepage}" target="_blank" rel="noopener">Website</a>`);
+  if (member.scholar)  links.push(`<a href="${member.scholar}"  target="_blank" rel="noopener">Scholar</a>`);
+  if (member.linkedin) links.push(`<a href="${member.linkedin}" target="_blank" rel="noopener">LinkedIn</a>`);
+  if (member.twitter)  links.push(`<a href="${member.twitter}"  target="_blank" rel="noopener">Twitter</a>`);
+  if (member.cv)       links.push(`<a href="${member.cv}"       target="_blank" rel="noopener">CV</a>`);
+  if (member.email)    links.push(`<a href="mailto:${member.email}">Email</a>`);
+  return links.join('');
+}
+
+function renderPICard(pi) {
+  const card = document.createElement('article');
+  card.className = 'pi-card';
+
+  // Photo — wrapped in link if homepage exists
+  const photoWrap = document.createElement('div');
+  photoWrap.className = 'pi-photo';
+  photoWrap.style.cursor = pi.homepage ? 'pointer' : 'default';
+  if (pi.photo) {
+    const img = document.createElement('img');
+    img.src = pi.photo;
+    img.alt = `${pi.name}, ${pi.role}`;
+    img.onerror = function () { this.parentElement.replaceChild(squarePlaceholder(36), this); };
+    photoWrap.appendChild(img);
+  } else {
+    photoWrap.appendChild(squarePlaceholder(36));
+  }
+  if (pi.homepage) {
+    const a = document.createElement('a');
+    a.href = pi.homepage;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.setAttribute('aria-label', `${pi.name}: homepage (opens in a new tab)`);
+    a.style.cssText = 'display:block;width:100%;height:100%;';
+    a.appendChild(photoWrap.firstChild);
+    photoWrap.appendChild(a);
+  }
+
+  // Name as link
+  const nameHtml = pi.homepage
+    ? `<a href="${pi.homepage}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;" onmouseover="this.style.color='var(--luna-accent)'" onmouseout="this.style.color='inherit'">${pi.name}</a>`
+    : pi.name;
+
+  const info = document.createElement('div');
+  info.innerHTML = `
+    <h3>${nameHtml}</h3>
+    <div class="pi-title">${pi.role}</div>
+    <p class="pi-bio">${pi.bio || ''}</p>
+    <ul class="interest-tags" aria-label="Research interests">
+      ${(pi.interests || []).map(t => `<li class="interest-tag">${t}</li>`).join('')}
+    </ul>
+    <div class="pi-links">${makeMemberLinks(pi)}</div>
+  `;
+
+  card.appendChild(photoWrap);
+  card.appendChild(info);
+  return card;
+}
+
+function renderMemberCard(member) {
+  const card = document.createElement('article');
+  card.className = 'member-card';
+
+
+  // Photo — wrapped in link if homepage exists
+  const photoWrap = document.createElement('div');
+  photoWrap.className = 'member-photo';
+  photoWrap.style.cursor = member.homepage ? 'pointer' : 'default';
+
+  const imgOrPlaceholder = (() => {
+    if (member.photo) {
+      const img = document.createElement('img');
+      img.src = member.photo;
+      img.alt = `${member.name}, ${member.role}`;
+      img.onerror = function () { this.parentElement.replaceChild(squarePlaceholder(18), this); };
+      return img;
+    }
+    return squarePlaceholder(18);
+  })();
+
+  if (member.homepage) {
+    const a = document.createElement('a');
+    a.href = member.homepage;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.setAttribute('aria-label', `${member.name}: homepage (opens in a new tab)`);
+    a.style.cssText = 'display:block;width:100%;height:100%;';
+    a.appendChild(imgOrPlaceholder);
+    photoWrap.appendChild(a);
+  } else {
+    photoWrap.appendChild(imgOrPlaceholder);
+  }
+
+  // Name as link
+  const nameHtml = member.homepage
+    ? `<a href="${member.homepage}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;" onmouseover="this.style.color='var(--luna-accent)'" onmouseout="this.style.color='inherit'">${member.name}</a>`
+    : member.name;
+
+  const info = document.createElement('div');
+  info.className = 'member-info';
+  info.innerHTML = `
+    <h3>${nameHtml}</h3>
+    <div class="member-role">${member.role}${member.flag ? ' ' + member.flag : ''}${member.start_year ? ' · ' + member.start_year + '–' : ''}</div>
+    <ul class="interest-tags" aria-label="Research interests">
+      ${(member.interests || []).map(t => `<li class="interest-tag">${t}</li>`).join('')}
+    </ul>
+    <p class="member-interests">${member.bio || ''}</p>
+    <div class="member-links">${makeMemberLinks(member)}</div>
+  `;
+
+  card.appendChild(photoWrap);
+  card.appendChild(info);
+  return card;
+}
+
+function sectionLabel(text) {
+  const h = document.createElement('h2');   // h1 (page) → h2 (group) → h3 (person)
+  h.className = 'team-section-label';
+  h.textContent = text;
+  return h;
+}
+
+async function renderTeam() {
+  const container = document.getElementById('team-container');
+  let data;
+  try {
+    const res = await fetch('data/members.json', { cache: 'no-cache' });   // always pick up edits
+    data = await res.json();
+  } catch (e) {
+    container.innerHTML = '<p style="color:var(--luna-text-light)">Could not load team data.</p>';
+    return;
+  }
+
+  // PI
+  if (data.pi && data.pi.length) {
+    container.appendChild(sectionLabel('Principal Investigator'));
+    data.pi.forEach(p => container.appendChild(renderPICard(p)));
+  }
+
+  // PhD Students
+  if (data.phd_students && data.phd_students.length) {
+    container.appendChild(sectionLabel('Current Students'));
+    const grid = document.createElement('div');
+    grid.className = 'members-grid';
+    data.phd_students.forEach(m => grid.appendChild(renderMemberCard(m)));
+    container.appendChild(grid);
+  }
+
+  // Masters
+  if (data.masters_students && data.masters_students.length) {
+    container.appendChild(sectionLabel('Master\'s Students'));
+    const grid = document.createElement('div');
+    grid.className = 'members-grid';
+    data.masters_students.forEach(m => grid.appendChild(renderMemberCard(m)));
+    container.appendChild(grid);
+  }
+
+  // Undergrad
+  if (data.undergrad_researchers && data.undergrad_researchers.length) {
+    container.appendChild(sectionLabel('Undergraduate Researchers'));
+    const grid = document.createElement('div');
+    grid.className = 'members-grid';
+    data.undergrad_researchers.forEach(m => grid.appendChild(renderMemberCard(m)));
+    container.appendChild(grid);
+  }
+
+  // Visiting
+  if (data.visiting_researchers && data.visiting_researchers.length) {
+    container.appendChild(sectionLabel('Visiting Researchers'));
+    const grid = document.createElement('div');
+    grid.className = 'members-grid';
+    data.visiting_researchers.forEach(m => grid.appendChild(renderMemberCard(m)));
+    container.appendChild(grid);
+  }
+
+  // Former students — a compact text list (name · role · year · next stop)
+  if (data.alumni && data.alumni.length) {
+    container.appendChild(sectionLabel('Former Students'));
+    const list = document.createElement('ul');
+    list.className = 'alumni-list';
+    data.alumni.forEach(m => {
+      const li = document.createElement('li');
+      const links = makeMemberLinks(m);   // Website / Scholar / LinkedIn … (empty fields are skipped)
+      li.innerHTML = `
+        <span class="alumni-name">${m.name}</span>
+        <span class="alumni-role">${m.role}${m.flag ? ' ' + m.flag : ''}</span>
+        ${m.years ? `<span class="alumni-years">${m.years}</span>` : ''}
+        ${m.next ? `<span class="alumni-next">Next stop: ${m.next}</span>` : ''}
+        ${links ? `<span class="alumni-links">${links}</span>` : ''}`;
+      list.appendChild(li);
+    });
+    container.appendChild(list);
+  }
+}
+
+renderTeam();
+</script>
+</body>
+</html>

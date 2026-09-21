@@ -1,0 +1,6 @@
+# Everything that is not part of the published website lives in _source/
+# (original images, PDFs, brand files, workshop photos, old backups, notes).
+_source/
+
+# macOS
+.DS_Store

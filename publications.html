@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Research publications from the LUNA Lab at the University of Utah." />
+  <title>Research | LUNA Lab</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav class="luna-nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/brand/luna-logo-transparent.png" alt="LUNA Lab — Home" />
+  </a>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">About</a></li>
+    <li><a href="publications.html">Research</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="join.html">Work with us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+
+<!-- ── Page Header ── -->
+<div class="page-header">
+  <canvas class="page-grid-canvas" aria-hidden="true"></canvas>
+  <canvas class="page-edge-canvas" aria-hidden="true"></canvas>
+  <div class="luna-container">
+    <h1>Research</h1>
+    <p>Publications, papers, and projects from the LUNA Lab.</p>
+  </div>
+</div>
+
+<section class="luna-section" aria-label="Publications">
+  <div class="luna-container">
+
+    <p style="color: var(--luna-text-light); margin-bottom: 2.5rem;">
+      Our research develops computational representations, predictive models, and
+      interactive systems at the intersection of HCI, multimodal AI, and user interface design.
+      For a complete list, see
+      <a data-link="piHomepage" href="https://yuejiang-nj.github.io/" target="_blank" rel="noopener">Prof. Jiang's homepage</a>.
+    </p>
+
+    <!-- Publications are rendered from data/publications.json — see README.md.
+         To add a paper: python3 scripts/add_paper.py --doi <DOI>   (or edit the JSON by hand) -->
+    <div id="pub-list">
+      <noscript>
+        <p>Please enable JavaScript to view the publication list, or see
+        <a href="data/publications.json">publications.json</a>.</p>
+      </noscript>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer class="luna-footer">
+  <div class="luna-container">
+    <div class="footer-squares" aria-hidden="true">
+      <span style="background:#940000;"></span>
+      <span style="background:#ff5858;"></span>
+      <span style="background:#6b0000;"></span>
+      <span style="background:#ff5858;"></span>
+      <span style="background:#940000;"></span>
+      <span style="background:rgba(255,255,255,0.15);"></span>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/brand/luna-logo.png" alt="" />
+        </div>
+        <p>LUNA, Lab for UI and Attention<br>School of Computing, University of Utah<br>Salt Lake City, UT</p>
+      </div>
+      <div class="footer-links">
+        <h4 id="footer-quick-links">Quick Links</h4>
+        <ul aria-labelledby="footer-quick-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="publications.html">Research</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="join.html">Work with Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4 id="footer-ext-links">Links</h4>
+        <ul aria-labelledby="footer-ext-links">
+          <li><a data-link="piHomepage" href="https://yuejiang-nj.github.io/" target="_blank" rel="noopener">PI Homepage</a></li>
+          <li><a data-link="schoolOfComputing" href="https://www.cs.utah.edu/" target="_blank" rel="noopener">School of Computing</a></li>
+          <li><a data-link="universityOfUtah" href="https://www.utah.edu/" target="_blank" rel="noopener">University of Utah</a></li>
+          <li><a data-link="labGithub" href="https://github.com/YueJiang-nj" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 LUNA Lab &nbsp;·&nbsp; University of Utah
+    </div>
+  </div>
+</footer>
+
+<script src="js/site-config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/animation.js"></script>
+<script>
+/**
+ * Renders publications.html from data/publications.json.
+ * To add or edit papers, change the JSON (or run scripts/add_paper.py) — no HTML edits needed.
+ */
+(async function () {
+  const list = document.getElementById('pub-list');
+  let data;
+  try {
+    const res = await fetch('data/publications.json', { cache: 'no-cache' });
+    data = await res.json();
+  } catch (e) {
+    list.innerHTML = '<p style="color:var(--luna-text-light)">Could not load the publication list.</p>';
+    return;
+  }
+
+  const cfg   = data.settings || {};
+  const bold  = cfg.highlight_names || [];
+  const cutoff = cfg.earlier_work_before || 0;
+  const esc = (t) => String(t ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  // ── Group: one block per year (newest first), then "Selected Earlier Work" ──
+  const groups = new Map();
+  for (const p of data.publications) {
+    const key = p.year < cutoff ? (cfg.earlier_work_label || 'Selected Earlier Work') : String(p.year);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(p);
+  }
+  const keys = [...groups.keys()].sort((a, b) => {
+    const na = /^\d+$/.test(a), nb = /^\d+$/.test(b);
+    if (na && nb) return Number(b) - Number(a);
+    return na ? -1 : nb ? 1 : 0;           // non-numeric label goes last
+  });
+
+  const authorHtml = (a) => bold.some(n => a.includes(n)) ? `<strong>${esc(a)}</strong>` : esc(a);
+
+  const cardHtml = (p) => `
+      <article class="pub-card">
+        ${(() => {
+          const img = p.thumb ? `<img src="${esc(p.thumb)}" alt="" loading="lazy" />`
+                              : `<div class="thumb-placeholder" data-thumb="${esc(p.id)}"></div>`;
+          // with a video: the whole thumbnail is a play button that opens it
+          return p.video
+            ? `<a class="pub-thumb has-video" href="${esc(p.video)}" target="_blank" rel="noopener"
+                  aria-label="Watch the video: ${esc(p.title)} (opens in a new tab)">
+                 ${img}
+                 <span class="play-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+               </a>`
+            : `<div class="pub-thumb" aria-hidden="true">${img}</div>`;
+        })()}
+        <div class="pub-info">
+          <div class="pub-venue">${esc(p.venue)}${p.venue_type ? ' &nbsp;·&nbsp; ' + esc(p.venue_type) : ''}</div>
+          <h3>${esc(p.title)}</h3>
+          <div class="pub-authors">
+            ${(p.authors || []).map(authorHtml).join(', ')}
+            ${p.note ? `<br><em>(${esc(p.note)})</em>` : ''}
+          </div>
+          ${p.description ? `<p class="pub-desc">${esc(p.description)}</p>` : ''}
+          ${(p.links || []).length ? `<div class="pub-links" role="group" aria-label="Links">
+            ${p.links.map(l => `<a class="pub-link" href="${esc(l.url)}" target="_blank" rel="noopener" aria-label="${esc(l.label)}: ${esc(p.title)} (opens in a new tab)">${esc(l.label)}</a>`).join('\n            ')}
+          </div>` : ''}
+          ${(p.tags || []).length ? `<div class="pub-tags">
+            ${p.tags.map(t => `<span class="pub-tag">${esc(t)}</span>`).join('\n            ')}
+          </div>` : ''}
+        </div>
+      </article>`;
+
+  list.innerHTML = keys.map(k => `
+    <div class="pub-year-group">
+      <h2 class="pub-year-label">${esc(k)}</h2>
+      ${groups.get(k).map(cardHtml).join('\n')}
+    </div>`).join('\n');
+
+  // ── Pixel thumbnails for papers without an image (LUNA square motif) ──
+  const BASE = ['#940000','#ff5858','#6b0000','#1a0000'];
+  list.querySelectorAll('.thumb-placeholder').forEach(el => {
+    // deterministic shuffle per paper id so each paper keeps its own pattern
+    let seed = 0; for (const ch of el.dataset.thumb) seed = (seed * 31 + ch.charCodeAt(0)) >>> 0;
+    const rnd = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
+    const colors = Array.from({ length: 8 }, () => BASE[(rnd() * BASE.length) | 0]);
+    for (let i = 0; i < 40; i++) {           // 8 cols × 5 rows
+      const sq = document.createElement('div');
+      sq.className = 'sq';
+      sq.style.background = rnd() < 0.08 ? '#ffffff' : colors[i % colors.length];
+      sq.style.opacity = (0.3 + rnd() * 0.7).toFixed(2);
+      el.appendChild(sq);
+    }
+  });
+})();
+</script>
+</body>
+</html>
