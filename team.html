@@ -317,6 +317,15 @@ async function renderTeam() {
   }
 
   // Visiting
+  if (data.collaborators && data.collaborators.length) {
+    container.appendChild(sectionLabel('Collaborative PhD Students and Researchers'));
+    const grid = document.createElement('div');
+    grid.className = 'members-grid';
+    data.collaborators.forEach(m => grid.appendChild(renderMemberCard(m)));
+    container.appendChild(grid);
+  }
+
+  // Visiting
   if (data.visiting_researchers && data.visiting_researchers.length) {
     container.appendChild(sectionLabel('Visiting Students and Collaborators'));
     const grid = document.createElement('div');
