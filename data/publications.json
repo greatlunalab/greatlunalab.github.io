@@ -20,7 +20,7 @@
       ],
       "note": "*Equal Contribution",
       "venue": "CHI 2026",
-      "venue_type": "ACM CHI",
+      "venue_type": "ACM CHI Conference on Human Factors in Computing Systems",
       "year": 2026,
       "description": "A reward-augmented vision-language model that predicts visual search behavior on graphical user interfaces, bridging computational UI understanding with human attention modeling.",
       "links": [
@@ -54,7 +54,7 @@
       ],
       "note": null,
       "venue": "CHI 2026",
-      "venue_type": "ACM CHI",
+      "venue_type": "ACM CHI Conference on Human Factors in Computing Systems",
       "year": 2026,
       "description": "A multi-stakeholder study on wearer–bystander privacy tensions in camera glasses, through surveys (N=525) and paired interviews (N=20). Contributes a diagnostic framework for context-adaptive pathways for privacy protection.",
       "links": [
@@ -115,7 +115,7 @@
       ],
       "note": null,
       "venue": "IEEE VR 2025",
-      "venue_type": "TVCG Paper",
+      "venue_type": "IEEE Transactions on Visualization and Computer Graphics",
       "year": 2025,
       "description": "Whisper — a multisensory approach combining visual, auditory, and tactile cues to recreate the feel of whispering in social VR. A comparative evaluation (N=24) shows Whisper significantly outperforms existing methods in privacy, intimacy, and social presence.",
       "links": [
@@ -144,7 +144,7 @@
       ],
       "note": null,
       "venue": "IUI 2025",
-      "venue_type": "ACM IUI",
+      "venue_type": "ACM Conference on Intelligent User Interfaces",
       "year": 2025,
       "description": "A vision-language model for UI understanding, instruction-tuned on machine-generated conversations about UI screenshots to support diverse downstream UI tasks.",
       "links": [
@@ -172,7 +172,7 @@
       ],
       "note": null,
       "venue": "UIST 2024",
-      "venue_type": "ACM UIST",
+      "venue_type": "ACM Symposium on User Interface Software and Technology",
       "year": 2024,
       "description": "",
       "links": [
@@ -208,7 +208,7 @@
       ],
       "note": null,
       "venue": "CHI 2024",
-      "venue_type": "ACM CHI",
+      "venue_type": "ACM CHI Conference on Human Factors in Computing Systems",
       "year": 2024,
       "description": "",
       "links": [
@@ -241,7 +241,7 @@
       ],
       "note": null,
       "venue": "CHI 2023",
-      "venue_type": "ACM CHI",
+      "venue_type": "CM CHI Conference on Human Factors in Computing Systems",
       "year": 2023,
       "description": "",
       "links": [
