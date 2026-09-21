@@ -462,6 +462,14 @@ main { padding-top: var(--nav-height); }
   -webkit-mask-image: none; mask-image: none;
 }
 
+/* Sponsor row on phones: stack the logos and keep the wide One-U wordmark inside the screen */
+@media (max-width: 640px) {
+  .sponsors-track:not(.scrolling) { gap: 1.6rem; padding: 0 1.5rem; }
+  .sponsor-logo { height: auto; max-width: 100%; }
+  .sponsor-logo img { height: 32px; max-width: 100%; }
+  .sponsor-logo img[src*="one-u-rai"] { height: auto; width: min(280px, 78vw); max-width: 78vw; }
+}
+
 @keyframes sponsors-scroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
