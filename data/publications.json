@@ -5,7 +5,7 @@
       "Yue Jiang",
       "Kewen Peng"
     ],
-    "earlier_work_before": 2025,
+    "earlier_work_before": 0,
     "earlier_work_label": "Selected Earlier Work"
   },
   "publications": [
@@ -170,7 +170,7 @@
         "Luis A. Leiva",
         "Antti Oulasvirta"
       ],
-      "note": null,
+      "note": "*Equal Contribution",
       "venue": "UIST 2024",
       "venue_type": "ACM Symposium on User Interface Software and Technology",
       "year": 2024,
@@ -183,6 +183,14 @@
         {
           "label": "Paper",
           "url": "https://yuejiang-nj.github.io/Publications/2024UIST_EyeFormer/project_page/paper.pdf"
+        },
+        {
+          "label": "Supplementary Material",
+          "url": "https://yuejiang-nj.github.io/Publications/2024UIST_EyeFormer/project_page/supp.pdf"
+        },
+        {
+          "label": "Video Preview",
+          "url": "https://yuejiang-nj.github.io/Publications/2024UIST_EyeFormer/project_page/video_preview.mp4"
         },
         {
           "label": "Code",
@@ -235,7 +243,7 @@
         "Yue Jiang",
         "Luis A. Leiva",
         "Hamed R. Tavakoli",
-        "Paul R.B. Houssel",
+        "Paul R. B. Houssel",
         "Julia Kylmala",
         "Antti Oulasvirta"
       ],
@@ -254,6 +262,14 @@
           "url": "https://yuejiang-nj.github.io/Publications/2023CHI_UEyes/project_page/paper.pdf"
         },
         {
+          "label": "Supplementary Material",
+          "url": "https://yuejiang-nj.github.io/Publications/2023CHI_UEyes/project_page/supp.pdf"
+        },
+        {
+          "label": "Video Preview",
+          "url": "https://www.youtube.com/watch?v=PjWSbFbll70"
+        },
+        {
           "label": "Dataset",
           "url": "https://zenodo.org/record/8010312"
         },
@@ -269,6 +285,846 @@
       ],
       "thumb": "assets/papers/ueyes.jpg",
       "video": "https://www.youtube.com/watch?v=hv5nIQdhMLI"
+    },
+    {
+      "id": "visual-search-gui",
+      "title": "Understanding Visual Search in Graphical User Interfaces",
+      "authors": [
+        "Aini Putkonen",
+        "Yue Jiang",
+        "Jingchun Zeng",
+        "Olli Tammilehto",
+        "Jussi P. P. Jokinen",
+        "Antti Oulasvirta"
+      ],
+      "note": null,
+      "venue": "IJHCS 2025",
+      "venue_type": "International Journal of Human-Computer Studies",
+      "year": 2025,
+      "description": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://www.sciencedirect.com/science/article/pii/S1071581925000400"
+        },
+        {
+          "label": "Dataset (VSGUI10k)",
+          "url": "https://osf.io/hmg9b/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/aalto-ui/VSGUI10K"
+        }
+      ],
+      "tags": [
+        "Eye Tracking",
+        "Visual Search",
+        "Graphical UI"
+      ]
+    },
+    {
+      "id": "workshop25",
+      "title": "Designing and Developing User Interfaces with AI: Advancing Tools, Workflows, and Practices",
+      "authors": [
+        "Yuwen Lu*",
+        "Yue Jiang*",
+        "Tiffany Knearem",
+        "Clara Kliman-Silver",
+        "Christof Lutteroth",
+        "Jeffrey Nichols",
+        "Wolfgang Stuerzlinger"
+      ],
+      "note": "*Equal Contribution",
+      "venue": "CHI 2025",
+      "venue_type": "Workshop",
+      "year": 2025,
+      "description": "",
+      "links": [
+        {
+          "label": "Webpage",
+          "url": "https://sites.google.com/view/computational-uichi25"
+        }
+      ],
+      "tags": [
+        "Workshop",
+        "Computational UI",
+        "AI"
+      ]
+    },
+    {
+      "id": "dreamstruct",
+      "title": "DreamStruct: Understanding Slides and UIs via Synthetic Data Generation",
+      "authors": [
+        "Yi-Hao Peng",
+        "Faria Huq",
+        "Yue Jiang",
+        "Jason Wu",
+        "Xin Yue Li",
+        "Jeffrey Bigham",
+        "Amy Pavel"
+      ],
+      "note": null,
+      "venue": "ECCV 2024",
+      "venue_type": "European Conference on Computer Vision",
+      "year": 2024,
+      "description": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2024ECCV_DreamStruct/paper.pdf"
+        },
+        {
+          "label": "Supplementary Material",
+          "url": "https://yuejiang-nj.github.io/Publications/2024ECCV_DreamStruct/supp.pdf"
+        }
+      ],
+      "tags": [
+        "Synthetic Data",
+        "UI Understanding",
+        "Vision Language Models"
+      ]
+    },
+    {
+      "id": "axnav",
+      "title": "AXNav: Replaying Accessibility Tests from Natural Language",
+      "authors": [
+        "Maryam Taeb",
+        "Amanda Swearngin",
+        "Eldon Schoop",
+        "Ruijia Cheng",
+        "Yue Jiang",
+        "Jeffrey Nichols"
+      ],
+      "note": null,
+      "venue": "CHI 2024",
+      "venue_type": "ACM CHI Conference on Human Factors in Computing Systems",
+      "year": 2024,
+      "description": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2024CHI_AXNav/paper.pdf"
+        },
+        {
+          "label": "Video Preview",
+          "url": "https://www.youtube.com/watch?v=Ab9Q9OVcfXY"
+        }
+      ],
+      "tags": [
+        "Accessibility",
+        "UI Automation",
+        "Natural Language"
+      ],
+      "video": "https://www.youtube.com/watch?v=DyMHlOvOfbs"
+    },
+    {
+      "id": "flexdoc",
+      "title": "FlexDoc: Flexible Document Adaptation through Optimizing both Content and Layout",
+      "authors": [
+        "Yue Jiang",
+        "Christof Lutteroth",
+        "Rajiv Jain",
+        "Christopher Tensmeyer",
+        "Varun Manjunatha",
+        "Wolfgang Stuerzlinger",
+        "Vlad Morariu"
+      ],
+      "note": null,
+      "venue": "VL/HCC 2024",
+      "venue_type": "IEEE Symposium on Visual Languages and Human-Centric Computing",
+      "year": 2024,
+      "description": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2024VLHCC_FlexDoc/paper.pdf"
+        }
+      ],
+      "tags": [
+        "Adaptive Documents",
+        "Layout Optimization",
+        "Computational UI"
+      ],
+      "video": "https://youtu.be/xY7SAXq_sXA"
+    },
+    {
+      "id": "visrecall-plus-plus",
+      "title": "VisRecall++: Analysing and Predicting Visualisation Recallability from Gaze Bahaviour",
+      "authors": [
+        "Yao Wang",
+        "Yue Jiang",
+        "Zhiming Hu",
+        "Constantin Ruhdorfer",
+        "Mihai Bâce",
+        "Andreas Bulling"
+      ],
+      "note": null,
+      "venue": "ETRA 2024",
+      "venue_type": "ACM Symposium on Eye Tracking Research and Applications",
+      "year": 2024,
+      "description": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2024ETRA_VisRecall++/paper.pdf"
+        }
+      ],
+      "tags": [
+        "Eye Tracking",
+        "Visualization",
+        "Recallability"
+      ]
+    },
+    {
+      "id": "scanpath-design-decisions",
+      "title": "Impact of Design Decisions in Scanpath Modeling",
+      "authors": [
+        "Parvin Emami",
+        "Yue Jiang",
+        "Zixin Guo",
+        "Luis A. Leiva"
+      ],
+      "note": null,
+      "venue": "ETRA 2024",
+      "venue_type": "ACM Symposium on Eye Tracking Research and Applications",
+      "year": 2024,
+      "description": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2024ETRA_Saliency/paper.pdf"
+        }
+      ],
+      "tags": [
+        "Eye Tracking",
+        "Scanpath Modeling",
+        "Visual Saliency"
+      ]
+    },
+    {
+      "id": "chi24-doctoral-consortium",
+      "title": "Computational Representations for Graphical User Interfaces",
+      "authors": [
+        "Yue Jiang"
+      ],
+      "note": null,
+      "venue": "CHI 2024",
+      "venue_type": "Doctoral Consortium",
+      "year": 2024,
+      "description": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2024CHI_Doctoral/paper.pdf"
+        }
+      ],
+      "tags": [
+        "Doctoral Consortium",
+        "Graphical UI"
+      ]
+    },
+    {
+      "id": "iluvui-chi24-workshop",
+      "title": "ILuvUI: Instruction-tuned LangUage-Vision Modeling of UIs from Machine Conversations",
+      "authors": [
+        "Yue Jiang",
+        "Eldon Schoop",
+        "Amanda Swearngin",
+        "Jeffrey Nichols"
+      ],
+      "note": null,
+      "venue": "CHI 2024",
+      "venue_type": "Workshop Paper",
+      "year": 2024,
+      "description": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2310.04869"
+        }
+      ],
+      "tags": [
+        "Workshop Paper",
+        "UI Understanding",
+        "Vision Language Models"
+      ]
+    },
+    {
+      "id": "suggesting-colors-gnn",
+      "title": "Suggesting Colors for UI Designs with Graph Neural Networks",
+      "authors": [
+        "Busra Asan",
+        "Lena Hegemann",
+        "Yue Jiang (project advisor)",
+        "Antti Oulasvirta"
+      ],
+      "note": null,
+      "venue": "CHI 2024",
+      "venue_type": "Workshop Paper",
+      "year": 2024,
+      "description": "",
+      "links": [],
+      "tags": [
+        "Workshop Paper",
+        "Graph Neural Networks",
+        "UI Design"
+      ]
+    },
+    {
+      "id": "workshop24",
+      "title": "Computational Methodologies for Understanding, Automating, and Evaluating User Interfaces",
+      "authors": [
+        "Yue Jiang*",
+        "Yuwen Lu*",
+        "Tiffany Knearem",
+        "Clara Kliman-Silver",
+        "Christof Lutteroth",
+        "Toby Jia-Jun Li",
+        "Jeffrey Nichols",
+        "Wolfgang Stuerzlinger"
+      ],
+      "note": "*Equal Contribution",
+      "venue": "CHI 2024",
+      "venue_type": "Workshop Proposal / Extended Abstract",
+      "year": 2024,
+      "description": "",
+      "links": [
+        {
+          "label": "Webpage",
+          "url": "https://sites.google.com/view/computational-uichi24"
+        },
+        {
+          "label": "Workshop Proposal",
+          "url": "https://yuejiang-nj.github.io/Publications/2024CHI_UserInterfaces/paper.pdf"
+        }
+      ],
+      "tags": [
+        "Workshop",
+        "Computational UI"
+      ]
+    },
+    {
+      "id": "ueyes-workshop",
+      "title": "UEyes: An Eye-Tracking Dataset across User Interface Types",
+      "authors": [
+        "Yue Jiang",
+        "Luis A. Leiva",
+        "Hamed R. Tavakoli",
+        "Paul R. B. Houssel",
+        "Julia Kylmala",
+        "Antti Oulasvirta"
+      ],
+      "note": null,
+      "venue": "CHI 2023",
+      "venue_type": "Workshop Paper",
+      "year": 2023,
+      "description": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2023CHI_UEyesWorkshop/paper.pdf"
+        }
+      ],
+      "tags": [
+        "Workshop Paper",
+        "Eye Tracking",
+        "Dataset"
+      ]
+    },
+    {
+      "id": "ui-design-assistance-demo",
+      "title": "Computational Assistance for User Interface Design: Smarter Generation and Evaluation of Design Ideas",
+      "authors": [
+        "Lena Hegemann",
+        "Yue Jiang",
+        "Joon-Gi Shin",
+        "Yi-Chi Liao",
+        "Markku Laine",
+        "Antti Oulasvirta"
+      ],
+      "note": null,
+      "venue": "CHI 2023",
+      "venue_type": "Interactivity",
+      "year": 2023,
+      "description": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2023CHI_Demo/paper.pdf"
+        }
+      ],
+      "tags": [
+        "Interactivity",
+        "UI Design",
+        "Computational UI"
+      ]
+    },
+    {
+      "id": "workshop23",
+      "title": "The Future of Computational Approaches for Understanding and Adapting User Interfaces",
+      "authors": [
+        "Yue Jiang",
+        "Yuwen Lu",
+        "Christof Lutteroth",
+        "Toby Jia-Jun Li",
+        "Jeffrey Nichols",
+        "Wolfgang Stuerzlinger"
+      ],
+      "note": null,
+      "venue": "CHI 2023",
+      "venue_type": "Workshop Proposal / Extended Abstract",
+      "year": 2023,
+      "description": "",
+      "links": [
+        {
+          "label": "Webpage",
+          "url": "https://sites.google.com/nd.edu/computational-uichi23/home"
+        },
+        {
+          "label": "Workshop Proposal",
+          "url": "https://yuejiang-nj.github.io/Publications/2023CHI_UserInterfaces/paper.pdf"
+        }
+      ],
+      "tags": [
+        "Workshop",
+        "Computational UI"
+      ]
+    },
+    {
+      "id": "petmei23",
+      "title": "Pervasive Eye Tracking and Mobile Eye-based Interaction (PETMEI)",
+      "authors": [
+        "Yao Wang",
+        "Ludwig Sidenmark",
+        "Teresa Hirzle",
+        "Yue Jiang",
+        "Andreas Bulling"
+      ],
+      "note": null,
+      "venue": "ETRA 2023",
+      "venue_type": "Workshop Proposal / Extended Abstract",
+      "year": 2023,
+      "description": "",
+      "links": [
+        {
+          "label": "Webpage",
+          "url": "https://www.petmei.org/2023/"
+        },
+        {
+          "label": "Workshop Proposal",
+          "url": "https://yuejiang-nj.github.io/Publications/2023ETRA_PETMEI/paper.pdf"
+        }
+      ],
+      "tags": [
+        "Workshop",
+        "Eye Tracking",
+        "Mobile Interaction"
+      ]
+    },
+    {
+      "id": "disability-semantics",
+      "title": "Disability Semantics for Academic Writing",
+      "authors": [
+        "Garreth Tigwell",
+        "Yue Jiang"
+      ],
+      "note": null,
+      "venue": "AccessSIGCHI 2023",
+      "venue_type": "Accessibility Writing Guidelines",
+      "year": 2023,
+      "description": "",
+      "links": [],
+      "tags": [
+        "Accessibility",
+        "Academic Writing"
+      ]
+    },
+    {
+      "id": "hifecap",
+      "title": "HiFECap: Monocular High-Fidelity and Expressive Capture of Human Performances",
+      "authors": [
+        "Yue Jiang",
+        "Marc Habermann",
+        "Vladislav Golyanik",
+        "Christian Theobalt"
+      ],
+      "note": null,
+      "venue": "BMVC 2022",
+      "venue_type": "British Machine Vision Conference",
+      "year": 2022,
+      "description": "",
+      "links": [
+        {
+          "label": "Webpage",
+          "url": "https://people.mpi-inf.mpg.de/~mhaberma/projects/2022-HiFECap/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2022BMVC_HiFECap/paper.pdf"
+        },
+        {
+          "label": "Supplementary Material",
+          "url": "https://yuejiang-nj.github.io/Publications/2022BMVC_HiFECap/supp.pdf"
+        },
+        {
+          "label": "Poster",
+          "url": "https://yuejiang-nj.github.io/Publications/2022BMVC_HiFECap/poster.pdf"
+        },
+        {
+          "label": "Presentation",
+          "url": "https://youtu.be/guAE7i37ojw"
+        }
+      ],
+      "tags": [
+        "Human Performance Capture",
+        "Computer Vision",
+        "3D Reconstruction"
+      ],
+      "video": "https://youtu.be/WWnftRlg-E4"
+    },
+    {
+      "id": "gender-cards",
+      "title": "Pretty Princess vs. Successful Leader: Gender Roles in Greeting Card Messages",
+      "authors": [
+        "Jiao Sun",
+        "Tongshuang Wu",
+        "Yue Jiang",
+        "Ronil Awalegaonkar",
+        "Xi Victoria Lin",
+        "Diyi Yang"
+      ],
+      "note": "Best Paper Honorable Mention",
+      "venue": "CHI 2022",
+      "venue_type": "ACM CHI Conference on Human Factors in Computing Systems",
+      "year": 2022,
+      "description": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2022CHI_Gender/paper.pdf"
+        }
+      ],
+      "tags": [
+        "Human-AI Interaction",
+        "Gender",
+        "Writing Assistance"
+      ]
+    },
+    {
+      "id": "workshop22",
+      "title": "Computational Approaches for Understanding, Generating, and Adapting User Interfaces",
+      "authors": [
+        "Yue Jiang*",
+        "Yuwen Lu*",
+        "Jeffrey Nichols",
+        "Wolfgang Stuerzlinger",
+        "Chun Yu",
+        "Christof Lutteroth",
+        "Yang Li",
+        "Ranjitha Kumar",
+        "Toby Jia-Jun Li"
+      ],
+      "note": "*Equal Contribution",
+      "venue": "CHI 2022",
+      "venue_type": "Workshop Proposal / Extended Abstract",
+      "year": 2022,
+      "description": "",
+      "links": [
+        {
+          "label": "Webpage",
+          "url": "https://sites.google.com/nd.edu/computational-uichi22/home"
+        },
+        {
+          "label": "Workshop Proposal",
+          "url": "https://yuejiang-nj.github.io/Publications/2022CHI_UserInterfaces/paper.pdf"
+        }
+      ],
+      "tags": [
+        "Workshop",
+        "Computational UI"
+      ]
+    },
+    {
+      "id": "layout-autocompletion-ai-day",
+      "title": "Designer-in-the-Loop Layout Autocompletion with Graph Neural Networks",
+      "authors": [
+        "Yue Jiang",
+        "Vikas Garg",
+        "Antti Oulasvirta"
+      ],
+      "note": null,
+      "venue": "FCAI AI Day 2022",
+      "venue_type": "Extended Abstract",
+      "year": 2022,
+      "description": "",
+      "links": [],
+      "tags": [
+        "Graph Neural Networks",
+        "Layout Autocompletion",
+        "Computational UI"
+      ]
+    },
+    {
+      "id": "reverseorc",
+      "title": "ReverseORC: Reverse Engineering of Resizable User Interface Layouts with OR-Constraints",
+      "authors": [
+        "Yue Jiang",
+        "Wolfgang Stuerzlinger",
+        "Christof Lutteroth"
+      ],
+      "note": null,
+      "venue": "CHI 2021",
+      "venue_type": "ACM CHI Conference on Human Factors in Computing Systems",
+      "year": 2021,
+      "description": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2021CHI_ReverseORC/paper.pdf"
+        },
+        {
+          "label": "Video Preview",
+          "url": "https://youtu.be/aKnni6tubyM"
+        }
+      ],
+      "tags": [
+        "Adaptive Layout",
+        "OR-Constraints",
+        "Reverse Engineering"
+      ],
+      "video": "https://youtu.be/uBVRtUvLFSk"
+    },
+    {
+      "id": "vid2doppler",
+      "title": "Vid2Doppler: Synthesizing Doppler Radar Data from Videos for Training Privacy-Preserving Activity Recognition",
+      "authors": [
+        "Karan Ahuja",
+        "Yue Jiang",
+        "Mayank Goel",
+        "Chris Harrison"
+      ],
+      "note": null,
+      "venue": "CHI 2021",
+      "venue_type": "ACM CHI Conference on Human Factors in Computing Systems",
+      "year": 2021,
+      "description": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2021CHI_Vid2Doppler/paper.pdf"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/YueJiang-nj/Vid2Doppler"
+        }
+      ],
+      "tags": [
+        "Activity Recognition",
+        "Doppler Radar",
+        "Privacy"
+      ],
+      "video": "https://youtu.be/TKin-A3xYGc"
+    },
+    {
+      "id": "positive-energy",
+      "title": "“Positive Energy”: Perceptions and Attitudes Towards COVID-19 Information on Social Media in China",
+      "authors": [
+        "Zhicong Lu",
+        "Yue Jiang",
+        "Chenxinran Shen",
+        "Margaret C. Jack",
+        "Daniel Wigdor",
+        "Mor Naaman"
+      ],
+      "note": null,
+      "venue": "CSCW 2021",
+      "venue_type": "ACM Conference on Computer-Supported Cooperative Work and Social Computing",
+      "year": 2021,
+      "description": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2021CSCW_Positive/paper.pdf"
+        }
+      ],
+      "tags": [
+        "Social Media",
+        "Misinformation",
+        "CSCW"
+      ]
+    },
+    {
+      "id": "sdiff",
+      "title": "SDFDiff: Differentiable Rendering of Signed Distance Fields for 3D Shape Optimization",
+      "authors": [
+        "Yue Jiang",
+        "Dantong Ji",
+        "Zhizhong Han",
+        "Matthias Zwicker"
+      ],
+      "note": "Oral Paper, Top 5%",
+      "venue": "CVPR 2020",
+      "venue_type": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "year": 2020,
+      "description": "",
+      "links": [
+        {
+          "label": "Project Page",
+          "url": "https://yuejiang-nj.github.io/Publications/2020CVPR_SDFDiff/project_page/main.html"
+        },
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2020CVPR_SDFDiff/paper.pdf"
+        },
+        {
+          "label": "Supplementary Material",
+          "url": "https://yuejiang-nj.github.io/Publications/2020CVPR_SDFDiff/Supp.pdf"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/YueJiang-nj/CVPR2020-SDFDiff"
+        },
+        {
+          "label": "Talk",
+          "url": "https://www.youtube.com/watch?v=0A83pElG5gk"
+        }
+      ],
+      "tags": [
+        "Differentiable Rendering",
+        "3D Reconstruction",
+        "Computer Vision"
+      ],
+      "video": "https://youtu.be/l3h9JZHAOqI"
+    },
+    {
+      "id": "orcsolver",
+      "title": "ORCSolver: An Efficient Solver for Adaptive GUI Layout with OR-Constraints",
+      "authors": [
+        "Yue Jiang",
+        "Wolfgang Stuerzlinger",
+        "Matthias Zwicker",
+        "Christof Lutteroth"
+      ],
+      "note": null,
+      "venue": "CHI 2020",
+      "venue_type": "ACM CHI Conference on Human Factors in Computing Systems",
+      "year": 2020,
+      "description": "",
+      "links": [
+        {
+          "label": "Project Page",
+          "url": "https://yuejiang-nj.github.io/Publications/2020CHI_ORCSolver/project_page/main.html"
+        },
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2020CHI_ORCSolver/paper.pdf"
+        },
+        {
+          "label": "Supplementary Material",
+          "url": "https://yuejiang-nj.github.io/Publications/2020CHI_ORCSolver/supp.pdf"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/YueJiang-nj/ORCSolver-CHI2020"
+        },
+        {
+          "label": "Video Preview",
+          "url": "https://youtu.be/K3900PR_FD4"
+        },
+        {
+          "label": "Talk",
+          "url": "https://youtu.be/5SAZ8iDKFhc"
+        }
+      ],
+      "tags": [
+        "Adaptive Layout",
+        "OR-Constraints",
+        "Computational UI"
+      ],
+      "video": "https://youtu.be/0S77vVG8btE"
+    },
+    {
+      "id": "government-dividend",
+      "title": "The Government's Dividend: Complex Perceptions of Social Media Misinformation in China",
+      "authors": [
+        "Zhicong Lu",
+        "Yue Jiang",
+        "Cheng Lu",
+        "Mor Naaman",
+        "Daniel Wigdor"
+      ],
+      "note": null,
+      "venue": "CHI 2020",
+      "venue_type": "ACM CHI Conference on Human Factors in Computing Systems",
+      "year": 2020,
+      "description": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2020CHI_Government/paper.pdf"
+        }
+      ],
+      "tags": [
+        "Social Media",
+        "Misinformation",
+        "HCI"
+      ]
+    },
+    {
+      "id": "docshop",
+      "title": "DocShop: Bringing Document Content to Life",
+      "authors": [
+        "Yue Jiang"
+      ],
+      "note": null,
+      "venue": "Adobe Research Project Expo 2020",
+      "venue_type": "Project Expo",
+      "year": 2020,
+      "description": "",
+      "links": [],
+      "tags": [
+        "Documents",
+        "Research Expo"
+      ]
+    },
+    {
+      "id": "orc-layout",
+      "title": "ORC Layout: Adaptive GUI Layout with OR-Constraints",
+      "authors": [
+        "Yue Jiang",
+        "Ruofei Du",
+        "Christof Lutteroth",
+        "Wolfgang Stuerzlinger"
+      ],
+      "note": null,
+      "venue": "CHI 2019",
+      "venue_type": "ACM CHI Conference on Human Factors in Computing Systems",
+      "year": 2019,
+      "description": "",
+      "links": [
+        {
+          "label": "Project Page",
+          "url": "https://yuejiang-nj.github.io/Publications/2020CHI_ORCSolver/project_page/main.html"
+        },
+        {
+          "label": "Paper",
+          "url": "https://yuejiang-nj.github.io/Publications/2019CHI_ORCLayout/paper.pdf"
+        },
+        {
+          "label": "Video Preview",
+          "url": "https://youtu.be/sIauRqcpA4w"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/YueJiang-nj/ORCSolver-CHI2020"
+        }
+      ],
+      "tags": [
+        "Adaptive Layout",
+        "OR-Constraints",
+        "Computational UI"
+      ],
+      "video": "https://youtu.be/eiEmLTfPDZQ"
     }
   ]
 }

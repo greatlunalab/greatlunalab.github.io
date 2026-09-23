@@ -38,6 +38,61 @@
       background: rgba(148,0,0,0.08);
       color: var(--luna-primary);
     }
+
+    /* Compact current-member rows: details and links stay on row one;
+       supervisor is always row two, aligned with the role. */
+    .alumni-list li.compact-member-row {
+      display: grid;
+      grid-template-columns: 12rem minmax(0, 1fr) auto;
+      column-gap: 1rem;
+      row-gap: 0.55rem;
+    }
+    .compact-member-row .alumni-name {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .compact-member-row .compact-member-primary {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .compact-member-row .alumni-links {
+      grid-column: 3;
+      grid-row: 1;
+      align-self: start;
+    }
+    .compact-member-row .compact-member-secondary {
+      grid-column: 2;
+      grid-row: 2;
+    }
+    .compact-member-primary,
+    .compact-member-secondary {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.35rem 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .alumni-list li.compact-member-row {
+        grid-template-columns: minmax(0, 1fr) auto;
+      }
+      .compact-member-row .alumni-name {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .compact-member-row .alumni-links {
+        grid-column: 2;
+        grid-row: 1;
+      }
+      .compact-member-row .compact-member-primary {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+      .compact-member-row .compact-member-secondary {
+        grid-column: 1 / -1;
+        grid-row: 3;
+      }
+    }
   </style>
 </head>
 <body>
@@ -278,15 +333,23 @@ function renderCompactMemberList(members) {
   list.className = 'alumni-list';
   members.forEach(m => {
     const li = document.createElement('li');
+    li.className = 'compact-member-row';
     const links = makeMemberLinks(m);
     const years = m.years || (m.start_year ? `${m.start_year}–` : '');
     li.innerHTML = `
       <span class="alumni-name">${m.name}</span>
-      <span class="alumni-role">${m.role}${m.flag ? ' ' + m.flag : ''}</span>
-      ${m.supervisor ? `<span class="alumni-role">Supervisor: ${m.supervisor}</span>` : ''}
-      ${years ? `<span class="alumni-years">${years}</span>` : ''}
-      ${m.next ? `<span class="alumni-next">Next stop: ${m.next}</span>` : ''}
-      ${links ? `<span class="alumni-links">${links}</span>` : ''}`;
+      <span class="compact-member-primary">
+        <span class="alumni-role">${m.role}</span>
+        ${m.university
+          ? `<span class="alumni-role">— ${m.university}${m.flag ? ' ' + m.flag : ''}</span>`
+          : (m.flag ? `<span class="alumni-role">${m.flag}</span>` : '')}
+        ${years ? `<span class="alumni-years">${years}</span>` : ''}
+      </span>
+      ${links ? `<span class="alumni-links">${links}</span>` : ''}
+      ${(m.supervisor || m.next) ? `<span class="compact-member-secondary">
+        ${m.supervisor ? `<span class="alumni-role">Supervisor: ${m.supervisor}</span>` : ''}
+        ${m.next ? `<span class="alumni-next">Next stop: ${m.next}</span>` : ''}
+      </span>` : ''}`;
     list.appendChild(li);
   });
   return list;
@@ -341,21 +404,6 @@ async function renderTeam() {
     container.appendChild(renderCompactMemberList(data.undergrad_researchers));
   }
 
-  // Collaborators — compact list matching former students
-  if (data.collaborators && data.collaborators.length) {
-    container.appendChild(sectionLabel('Collaborative PhD Students and Researchers'));
-    container.appendChild(renderCompactMemberList(data.collaborators));
-  }
-
-  // Visiting
-  if (data.visiting_researchers && data.visiting_researchers.length) {
-    container.appendChild(sectionLabel('Visiting Students and Collaborators'));
-    const grid = document.createElement('div');
-    grid.className = 'members-grid';
-    data.visiting_researchers.forEach(m => grid.appendChild(renderMemberCard(m)));
-    container.appendChild(grid);
-  }
-
   // Former students — a compact text list (name · role · year · next stop)
   if (data.alumni && data.alumni.length) {
     container.appendChild(sectionLabel('Former Students'));
@@ -374,6 +422,22 @@ async function renderTeam() {
     });
     container.appendChild(list);
   }
+
+  // Collaborators — compact list matching former students
+  if (data.collaborators && data.collaborators.length) {
+    container.appendChild(sectionLabel('Collaborative PhD Students and Postdocs'));
+    container.appendChild(renderCompactMemberList(data.collaborators));
+  }
+
+  // Visiting
+  if (data.visiting_researchers && data.visiting_researchers.length) {
+    container.appendChild(sectionLabel('Visiting Students and Collaborators'));
+    const grid = document.createElement('div');
+    grid.className = 'members-grid';
+    data.visiting_researchers.forEach(m => grid.appendChild(renderMemberCard(m)));
+    container.appendChild(grid);
+  }
+
 }
 
 renderTeam();

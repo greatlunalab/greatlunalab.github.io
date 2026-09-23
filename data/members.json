@@ -75,21 +75,106 @@
     {
       "name": "Jinghui Hu",
       "role": "Postdoctoral Researcher",
+      "university": "Lancaster University",
+      "flag": "🇬🇧",
       "supervisor": "Prof. Hans Gellersen",
-      "homepage": "jinghui-hu.github.io/",
+      "homepage": "https://jinghui-hu.github.io/",
       "scholar": "https://scholar.google.com/citations?user=JxZD-V0AAAAJ&hl=en"
+    },
+    {
+      "name": "Xiangyu Zhou",
+      "role": "PhD Student",
+      "university": "University of Michigan",
+      "flag": "🇺🇸",
+      "supervisor": "Prof. Steve Oney",
+      "homepage": "https://kevinxiangyuzhou.github.io/",
+      "scholar": "https://scholar.google.com/citations?user=Aj7EmCYAAAAJ&hl=en"
+    },
+    {
+      "name": "Duotun Wang",
+      "role": "PhD Student",
+      "university": "Hong Kong University of Science and Technology (Guangzhou)",
+      "flag": "🇨🇳",
+      "supervisor": "Prof. Mingming Fan and Prof. Zeyu Wang",
+      "homepage": "https://www.duotun-wang.co.uk/",
+      "scholar": "https://scholar.google.com/citations?hl=en&user=S-N5ZgIAAAAJ"
+    },
+    {
+      "name": "Parvin Emami",
+      "role": "PhD Student",
+      "university": "University of Luxembourg",
+      "flag": "🇱🇺",
+      "supervisor": "Prof. Luis A. Leiva",
+      "homepage": "https://www.uni.lu/fstm-en/people/parvin-emami/",
+      "scholar": "https://scholar.google.com/citations?user=SHUgxekAAAAJ&hl=en"
+    },
+    {
+      "name": "Boyu Li",
+      "role": "PhD Student",
+      "university": "Hong Kong University of Science and Technology",
+      "flag": "🇭🇰",
+      "supervisor": "Prof. Hongbo Fu and Prof. Zeyu Wang",
+      "homepage": "https://liboyu.space/",
+      "scholar": "https://scholar.google.com/citations?hl=en&user=yBSPHgsAAAAJ"
+    },
+    {
+      "name": "Joohee Kim",
+      "role": "MS–PhD Student",
+      "university": "Ulsan National Institute of Science and Technology",
+      "flag": "🇰🇷",
+      "supervisor": "Prof. Sungahn Ko",
+      "homepage": "",
+      "scholar": ""
     }
   ],
   "alumni": [
   
+
     {
+      "name": "Zicong Geng",
+      "role": "Undergraduate Research Assistant",
+      "years": "2026",
+      "flag": "🇨🇳",
+      "linkedin": "https://www.linkedin.com/in/zicong-geng-73a752394/"
+    },
+    {
+      "name": "Chenming Ge",
+      "role": "Undergraduate Research Assistant",
+      "flag": "🇨🇳",
+      "years": "2026",
+      "homepage": "https://oscar-ge.github.io/"
+    },
+    {
+      "name": "Chengyang Shi",
+      "role": "Undergraduate Research Assistant",
+      "flag": "🇨🇳",
+      "years": "2026",
+      "linkedin": "https://www.linkedin.com/in/chengyang-shi-91844738b/"
+    },
+        {
       "name": "Kaden Salem",
-      "role": "Research Assistant",
+      "role": "Undergraduate Research Assistant",
       "flag": "🇺🇸",
-      "years": "2025",
+      "years": "2026",
       "next": "Software Engineer @ Goldman Sachs",
       "homepage": "",
       "linkedin": "https://www.linkedin.com/in/kadensalem/"
+    },
+    {
+      "name": "Yura Hwang",
+      "role": "Graduate Research Assistant",
+      "flag": "🇰🇷",
+      "years": "2026",
+      "next": "PhD Student @ University of Utah",
+      "linkedin": "https://www.linkedin.com/in/yurahwang97/"
+    },
+    {
+      "name": "Aryan Garg",
+      "role": "Undergraduate Research Assistant",
+      "flag": "🇮🇳",
+      "years": "2024 - 2025",
+      "next": "PhD Student @ University of Wisconsin-Madison",
+      "homepage": "https://aryan-garg.github.io/"
     }
   ]
 }
