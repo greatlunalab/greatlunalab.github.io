@@ -72,6 +72,7 @@
 
   ],
   "collaborators": [
+
     {
       "name": "Jinghui Hu",
       "role": "Postdoctoral Researcher",
@@ -89,6 +90,15 @@
       "supervisor": "Prof. Steve Oney",
       "homepage": "https://kevinxiangyuzhou.github.io/",
       "scholar": "https://scholar.google.com/citations?user=Aj7EmCYAAAAJ&hl=en"
+    },
+        {
+      "name": "Jiexin Ding",
+      "role": "PhD Student",
+      "university": "University of Washington",
+      "flag": "🇺🇸",
+      "supervisor": "Prof. Akshay Gadre and Prof. Shwetak Patel",
+      "homepage": "https://djx06.github.io/",
+      "scholar": "https://scholar.google.com/citations?user=N2lk-m0AAAAJ&hl=en"
     },
     {
       "name": "Duotun Wang",
@@ -113,7 +123,7 @@
       "role": "PhD Student",
       "university": "Hong Kong University of Science and Technology",
       "flag": "🇭🇰",
-      "supervisor": "Prof. Hongbo Fu and Prof. Zeyu Wang",
+      "supervisor": "Prof. Hongbo Fu",
       "homepage": "https://liboyu.space/",
       "scholar": "https://scholar.google.com/citations?hl=en&user=yBSPHgsAAAAJ"
     },
